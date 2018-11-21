@@ -10,7 +10,6 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
-// import './App.css';
 
 const styles = {
   root: {
@@ -26,6 +25,11 @@ const styles = {
   title: {
     verticalAlign: 'middle',
   },
+  iconHover: {
+    '&:hover': {
+      color: () => '#ff6600',
+    },
+  },
 };
 
 const theme = createMuiTheme({
@@ -40,7 +44,70 @@ const theme = createMuiTheme({
   }
 });
 
+const white = '#FFF';
+
+const unseenGloryColors = [
+  '#ff6600',
+  '#00aa00',
+  '#2E9AFE'
+];
+const randomUnseenGloryColor = (skipColor = null) => {
+  const availableColors = [...unseenGloryColors];
+  if (skipColor) {
+    var index = availableColors.indexOf(skipColor);
+    if (index > -1) {
+      availableColors.splice(index, 1);
+    }
+  }
+  const colorClassIndex = Math.floor(Math.random() * availableColors.length);
+  return availableColors[colorClassIndex];
+}
+
 class App extends Component {
+  constructor() {
+    super();
+
+    const unFragmentColor = randomUnseenGloryColor();
+    const seenFragmentColor = randomUnseenGloryColor(unFragmentColor);
+    const gloryFragmentColor = unseenGloryColors.filter(color => color !== unFragmentColor && color !== seenFragmentColor)[0];
+
+    this.state = {
+      chevronColorLeft: white,
+      chevronColorRight: white,
+      unFragmentColor,
+      seenFragmentColor,
+      gloryFragmentColor,
+    }
+  }
+
+  onEnterChevronLeft = () => {
+    this.setState(() => ({ chevronColorLeft: randomUnseenGloryColor(this.state.chevronColorLeft) }));
+  }
+
+  onEnterChevronRight = () => {
+    this.setState(() => ({ chevronColorRight: randomUnseenGloryColor(this.state.chevronColorRight) }));
+  }
+
+  onLeaveChevronLeft = () => {
+    this.setState(() => ({ chevronColorLeft: white }));
+  }
+
+  onLeaveChevronRight = () => {
+    this.setState(() => ({ chevronColorRight: white }));
+  }
+
+  onEnterTitleFragment = () => {
+    const unFragmentColor = randomUnseenGloryColor(this.state.unFragmentColor);
+    const seenFragmentColor = randomUnseenGloryColor(unFragmentColor);
+    const gloryFragmentColor = unseenGloryColors.filter(color => color !== unFragmentColor && color !== seenFragmentColor)[0];
+
+    this.setState(() => ({
+      unFragmentColor,
+      seenFragmentColor,
+      gloryFragmentColor,
+    }));
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -52,15 +119,35 @@ class App extends Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="h5" color="inherit" className={classes.grow} align="center">
-              <IconButton color="inherit" aria-label="Left">
-                <ChevronLeft fontSize="large" alignmentBaseline="middle" />
+              <IconButton color="inherit" aria-label="Left" onMouseEnter={this.onEnterChevronLeft} onMouseLeave={this.onLeaveChevronLeft}>
+                <ChevronLeft style={{color: this.state.chevronColorLeft}} fontSize="large" alignmentBaseline="middle" />
               </IconButton>
-              <span className={classes.title} color="#333">UNSEEN GLORY</span>
-              <IconButton color="inherit" aria-label="Right">
-                <ChevronRight fontSize="large" alignmentBaseline="middle" />
+              <span
+                className={classes.title}
+                style={{color: this.state.unFragmentColor}}
+                onMouseEnter={this.onEnterTitleFragment}
+              >
+                UN
+              </span>
+              <span
+                className={classes.title}
+                style={{color: this.state.seenFragmentColor}}
+                onMouseEnter={this.onEnterTitleFragment}
+              >
+                SEEN
+              </span>
+              <span className={classes.title}> </span>
+              <span
+                className={classes.title}
+                style={{color: this.state.gloryFragmentColor}}
+                onMouseEnter={this.onEnterTitleFragment}
+              >
+                GLORY
+              </span>
+              <IconButton color="inherit" aria-label="Right" onMouseEnter={this.onEnterChevronRight} onMouseLeave={this.onLeaveChevronRight}>
+                <ChevronRight style={{color: this.state.chevronColorRight}} fontSize="large" alignmentBaseline="middle" />
               </IconButton>
             </Typography>
-
             <Button>
               Sources
             </Button>
