@@ -5,18 +5,24 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
+import BookIcon from '@material-ui/icons/Book';
+import Hidden from '@material-ui/core/Hidden';
 
 const styles = {
   root: {
     flexGrow: 1,
   },
-  grow: {
-    flexGrow: 1,
+  appBarTitle: {
+    width: '100%',
+    textAlign: 'center',
+  },
+  appBarTitleElement: {
+    display: 'inline',
+    verticalAlign: 'middle',
   },
   menuButton: {
     marginLeft: -12,
@@ -41,7 +47,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: '"Bitter", serif',
-  }
+  },
 });
 
 const white = '#FFF';
@@ -77,6 +83,7 @@ class App extends Component {
       unFragmentColor,
       seenFragmentColor,
       gloryFragmentColor,
+      bookIconColor: white,
     }
   }
 
@@ -84,12 +91,12 @@ class App extends Component {
     this.setState(() => ({ chevronColorLeft: randomUnseenGloryColor(this.state.chevronColorLeft) }));
   }
 
-  onEnterChevronRight = () => {
-    this.setState(() => ({ chevronColorRight: randomUnseenGloryColor(this.state.chevronColorRight) }));
-  }
-
   onLeaveChevronLeft = () => {
     this.setState(() => ({ chevronColorLeft: white }));
+  }
+
+  onEnterChevronRight = () => {
+    this.setState(() => ({ chevronColorRight: randomUnseenGloryColor(this.state.chevronColorRight) }));
   }
 
   onLeaveChevronRight = () => {
@@ -108,6 +115,14 @@ class App extends Component {
     }));
   }
 
+  onEnterBookIcon = () => {
+    this.setState(() => ({ bookIconColor: randomUnseenGloryColor(this.state.bookIconColor) }));
+  }
+
+  onLeaveBookIcon = () => {
+    this.setState(() => ({ bookIconColor: white }));
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -118,39 +133,45 @@ class App extends Component {
             <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton>
-            <Typography variant="h5" color="inherit" className={classes.grow} align="center">
-              <IconButton color="inherit" aria-label="Left" onMouseEnter={this.onEnterChevronLeft} onMouseLeave={this.onLeaveChevronLeft}>
-                <ChevronLeft style={{color: this.state.chevronColorLeft}} fontSize="large" alignmentBaseline="middle" />
-              </IconButton>
-              <span
-                className={classes.title}
-                style={{color: this.state.unFragmentColor}}
-                onMouseEnter={this.onEnterTitleFragment}
-              >
-                UN
-              </span>
-              <span
-                className={classes.title}
-                style={{color: this.state.seenFragmentColor}}
-                onMouseEnter={this.onEnterTitleFragment}
-              >
-                SEEN
-              </span>
-              <span className={classes.title}> </span>
-              <span
-                className={classes.title}
-                style={{color: this.state.gloryFragmentColor}}
-                onMouseEnter={this.onEnterTitleFragment}
-              >
-                GLORY
-              </span>
-              <IconButton color="inherit" aria-label="Right" onMouseEnter={this.onEnterChevronRight} onMouseLeave={this.onLeaveChevronRight}>
-                <ChevronRight style={{color: this.state.chevronColorRight}} fontSize="large" alignmentBaseline="middle" />
-              </IconButton>
-            </Typography>
-            <Button>
-              Sources
-            </Button>
+            <div className={classes.appBarTitle}>
+              <Hidden smDown>
+                <IconButton className={classes.appBarTitleElement} color="inherit" aria-label="Left" onMouseEnter={this.onEnterChevronLeft} onMouseLeave={this.onLeaveChevronLeft}>
+                  <ChevronLeft style={{color: this.state.chevronColorLeft}} fontSize="large" alignmentBaseline="middle" />
+                </IconButton>
+              </Hidden>
+              <Typography className={classes.appBarTitleElement} variant="h5" color="inherit" align="center">
+                <span
+                  className={classes.title}
+                  style={{color: this.state.unFragmentColor}}
+                  onMouseEnter={this.onEnterTitleFragment}
+                >
+                  UN
+                </span>
+                <span
+                  className={classes.title}
+                  style={{color: this.state.seenFragmentColor}}
+                  onMouseEnter={this.onEnterTitleFragment}
+                >
+                  SEEN
+                </span>
+                <span className={classes.title}> </span>
+                <span
+                  className={classes.title}
+                  style={{color: this.state.gloryFragmentColor}}
+                  onMouseEnter={this.onEnterTitleFragment}
+                >
+                  GLORY
+                </span>
+              </Typography>
+              <Hidden smDown>
+                <IconButton className={classes.appBarTitleElement} color="inherit" aria-label="Right" onMouseEnter={this.onEnterChevronRight} onMouseLeave={this.onLeaveChevronRight}>
+                  <ChevronRight style={{color: this.state.chevronColorRight}} fontSize="large" alignmentBaseline="middle" />
+                </IconButton>
+              </Hidden>
+            </div>
+            <IconButton color="inherit" aria-label="Right" onMouseEnter={this.onEnterBookIcon} onMouseLeave={this.onLeaveBookIcon}>
+              <BookIcon style={{color: this.state.bookIconColor}} alignmentBaseline="middle" />
+            </IconButton>
           </Toolbar>
         </AppBar>
       </MuiThemeProvider>
