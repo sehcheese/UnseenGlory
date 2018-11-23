@@ -1,85 +1,82 @@
 export default {
-  "title": "Hallelujah.txt",
-  "lines": [
+  title: 'Hallelujah.txt',
+  subtitle: null,
+  lines: [
     {
-      "line": "You are the spring\r",
-      "reference": null
+      line: 'You are the spring',
+      reference: null,
     },
     {
-      "line": "which seeks the thirsty\r",
-      "reference": null
+      line: 'which seeks the thirsty',
+      reference: null,
     },
     {
-      "line": "And Lord, You know\r",
-      "reference": null
+      line: 'And Lord, You know',
+      reference: null,
     },
     {
-      "line": "I am thirsty\r",
-      "reference": null
+      line: 'I am thirsty',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "You grant grace\r",
-      "reference": null
+      line: 'You grant grace',
+      reference: null,
     },
     {
-      "line": "to all who call on You\r",
-      "reference": null
+      line: 'to all who call on You',
+      reference: null,
     },
     {
-      "line": "And You say blessed\r",
-      "reference": null
+      line: 'And You say blessed',
+      reference: null,
     },
     {
-      "line": "are the poor in spirit\r",
-      "reference": null
+      line: 'are the poor in spirit',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "You endured the cross\r",
-      "reference": null
+      line: 'You endured the cross',
+      reference: null,
     },
     {
-      "line": "for the joy set before\r",
-      "reference": null
+      line: 'for the joy set before',
+      reference: null,
     },
     {
-      "line": "And Lord, we are sorrowful\r",
-      "reference": null
+      line: 'And Lord, we are sorrowful',
+      reference: null,
     },
     {
-      "line": "yet always rejoicing\r",
-      "reference": null
+      line: 'yet always rejoicing',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "You are as good\r",
-      "reference": null
+      line: 'You are as good',
+      reference: null,
     },
     {
-      "line": "as the day is long\r",
-      "reference": null
+      line: 'as the day is long',
+      reference: null,
     },
     {
-      "line": "And You are my\r",
-      "reference": null
+      line: 'And You are my',
+      reference: null,
     },
     {
-      "line": "objective hallelujah\r",
-      "reference": null
+      line: 'objective hallelujah',
+      reference: null,
     },
-    {
-      "line": "",
-      "reference": null
-    }
-  ]
-}
+  ],
+};

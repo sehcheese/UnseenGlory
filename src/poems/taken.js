@@ -1,125 +1,122 @@
 export default {
-  "title": "Taken.txt",
-  "lines": [
+  title: 'Taken',
+  subtitle: null,
+  lines: [
     {
-      "line": "The Lord has seen fit to take away\r",
-      "reference": null
+      line: 'The Lord has seen fit to take away',
+      reference: null,
     },
     {
-      "line": "what I thought would carry the day\r",
-      "reference": null
+      line: 'what I thought would carry the day',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "The sovereign Lord has stricken me\r",
-      "reference": null
+      line: 'The sovereign Lord has stricken me',
+      reference: null,
     },
     {
-      "line": "and I am hurting desperately\r",
-      "reference": null
+      line: 'and I am hurting desperately',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "I am a shell and not a man\r",
-      "reference": null
+      line: 'I am a shell and not a man',
+      reference: null,
     },
     {
-      "line": "broken and bruised by His plan\r",
-      "reference": null
+      line: 'broken and bruised by His plan',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "We all with trouble are weighed down\r",
-      "reference": null
+      line: 'We all with trouble are weighed down',
+      reference: null,
     },
     {
-      "line": "our suffering a thorny crown\r",
-      "reference": null
+      line: 'our suffering a thorny crown',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "As it was His, so comfort too\r",
-      "reference": null
+      line: 'As it was His, so comfort too',
+      reference: null,
     },
     {
-      "line": "from His Spirit our hearts renews\r",
-      "reference": null
+      line: 'from His Spirit our hearts renews',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "Though you stumble, you will not fall\r",
-      "reference": null
+      line: 'Though you stumble, you will not fall',
+      reference: null,
     },
     {
-      "line": "the Lord will hear your every call\r",
-      "reference": null
+      line: 'the Lord will hear your every call',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "Give Him all your weary heart\r",
-      "reference": null
+      line: 'Give Him all your weary heart',
+      reference: null,
     },
     {
-      "line": "your sorrow that will not depart\r",
-      "reference": null
+      line: 'your sorrow that will not depart',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "He is making all things new\r",
-      "reference": null
+      line: 'He is making all things new',
+      reference: null,
     },
     {
-      "line": "all that's sad will come untrue\r",
-      "reference": null
+      line: 'all that's sad will come untrue',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "In the morning joy you'll know\r",
-      "reference": null
+      line: 'In the morning joy you'll know',
+      reference: null,
     },
     {
-      "line": "your cup will surely overflow\r",
-      "reference": null
+      line: 'your cup will surely overflow',
+      reference: null,
     },
     {
-      "line": "\r",
-      "reference": null
+      line: '',
+      reference: null,
     },
     {
-      "line": "Cast on Him all your cares\r",
-      "reference": null
+      line: 'Cast on Him all your cares',
+      reference: null,
     },
     {
-      "line": "the Lord our burdens daily bears\r",
-      "reference": null
+      line: 'the Lord our burdens daily bears',
+      reference: null,
     },
-    {
-      "line": "",
-      "reference": null
-    }
-  ]
-}
+  ],
+};

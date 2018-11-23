@@ -1,53 +1,54 @@
 export default {
-  "title": "The Death of Hope.txt",
-  "lines": [
+  title: 'The Death of Hope.txt',
+  subtitle: null,
+  lines: [
     {
-      "line": "Hope is the last thing to\r",
-      "reference": null
+      line: 'Hope is the last thing to',
+      reference: null,
     },
     {
-      "line": "die\r",
-      "reference": null
+      line: 'die',
+      reference: null,
     },
     {
-      "line": "The final enemy is\r",
-      "reference": null
+      line: 'The final enemy is',
+      reference: null,
     },
     {
-      "line": "death\r",
-      "reference": null
+      line: 'death',
+      reference: null,
     },
     {
-      "line": "Hope is realized in death's\r",
-      "reference": null
+      line: 'Hope is realized in death's',
+      reference: null,
     },
     {
-      "line": "dying\r",
-      "reference": null
+      line: 'dying',
+      reference: null,
     },
     {
-      "line": "And dies too, for to\r",
-      "reference": null
+      line: 'And dies too, for to',
+      reference: null,
     },
     {
-      "line": "hope\r",
-      "reference": null
+      line: 'hope',
+      reference: null,
     },
     {
-      "line": "in what is seen is no\r",
-      "reference": null
+      line: 'in what is seen is no',
+      reference: null,
     },
     {
-      "line": "hope\r",
-      "reference": null
+      line: 'hope',
+      reference: null,
     },
     {
-      "line": "at all; this dead body's life is\r",
-      "reference": null
+      line: 'at all; this dead body's life is',
+      reference: null,
     },
     {
-      "line": "hoping",
-      "reference": null
-    }
-  ]
-}
+      line: 'hoping',
+      reference: null,
+    },
+  ],
+};
