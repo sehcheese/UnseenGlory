@@ -11,6 +11,9 @@ import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
 import BookIcon from '@material-ui/icons/Book';
 import Hidden from '@material-ui/core/Hidden';
+import Poem from './Poem';
+
+import { poems, poemOrder } from './poems';
 
 const styles = {
   root: {
@@ -57,6 +60,7 @@ const unseenGloryColors = [
   '#00aa00',
   '#2E9AFE'
 ];
+
 const randomUnseenGloryColor = (skipColor = null) => {
   const availableColors = [...unseenGloryColors];
   if (skipColor) {
@@ -84,7 +88,19 @@ class App extends Component {
       seenFragmentColor,
       gloryFragmentColor,
       bookIconColor: white,
+      activePoemIndex: null,
     }
+  }
+
+  advancePoemLeft = () => {
+    const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : 0;
+    const newActivePoemIndex = activePoemIndex === 0 ? poemOrder.length - 1 : activePoemIndex - 1;
+    this.setState(() => ({ activePoemIndex: newActivePoemIndex }));
+  }
+
+  advancePoemRight = () => {
+    const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : -1;
+    this.setState(() => ({ activePoemIndex: (activePoemIndex + 1) % poemOrder.length }));
   }
 
   onEnterChevronLeft = () => {
@@ -125,6 +141,12 @@ class App extends Component {
 
   render() {
     const { classes } = this.props;
+
+    let content;
+    if (this.state.activePoemIndex !== null) {
+      content = <Poem activePoem={poems[poemOrder[this.state.activePoemIndex]]} />;
+    }
+
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
@@ -135,7 +157,13 @@ class App extends Component {
             </IconButton>
             <div className={classes.appBarTitle}>
               <Hidden smDown>
-                <IconButton className={classes.appBarTitleElement} color="inherit" aria-label="Left" onMouseEnter={this.onEnterChevronLeft} onMouseLeave={this.onLeaveChevronLeft}>
+                <IconButton
+                  className={classes.appBarTitleElement}
+                  color="inherit" aria-label="Left"
+                  onMouseEnter={this.onEnterChevronLeft}
+                  onMouseLeave={this.onLeaveChevronLeft}
+                  onClick={this.advancePoemLeft}
+                >
                   <ChevronLeft style={{color: this.state.chevronColorLeft}} fontSize="large" alignmentBaseline="middle" />
                 </IconButton>
               </Hidden>
@@ -164,7 +192,13 @@ class App extends Component {
                 </span>
               </Typography>
               <Hidden smDown>
-                <IconButton className={classes.appBarTitleElement} color="inherit" aria-label="Right" onMouseEnter={this.onEnterChevronRight} onMouseLeave={this.onLeaveChevronRight}>
+                <IconButton
+                  className={classes.appBarTitleElement}
+                  color="inherit" aria-label="Right"
+                  onMouseEnter={this.onEnterChevronRight}
+                  onMouseLeave={this.onLeaveChevronRight}
+                  onClick={this.advancePoemRight}
+                >
                   <ChevronRight style={{color: this.state.chevronColorRight}} fontSize="large" alignmentBaseline="middle" />
                 </IconButton>
               </Hidden>
@@ -174,6 +208,7 @@ class App extends Component {
             </IconButton>
           </Toolbar>
         </AppBar>
+        {content}
       </MuiThemeProvider>
     );
   }
