@@ -8,11 +8,18 @@ const styles = {
     fontSize: '22px',
     fontStyle: 'italic',
     marginTop: '20px',
-    marginBottom: '20px',
+  },
+  subtitle: {
+    textAlign: 'center',
+    fontSize: '16px',
+    fontStyle: 'italic',
+    marginTop: '12px',
   },
   text: {
     fontSize: '12px',
     fontStyle: 'regular',
+    width: 'fit-content',
+    margin: '20px auto',
   },
 };
 

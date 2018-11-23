@@ -67,7 +67,7 @@ export default {
       reference: null,
     },
     {
-      line: '    Noon',
+      line: '\tNoon',
       reference: null,
     },
   ],
