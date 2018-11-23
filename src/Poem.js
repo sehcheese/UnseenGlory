@@ -11,7 +11,7 @@ const styles = {
   },
   subtitle: {
     textAlign: 'center',
-    fontSize: '16px',
+    fontSize: '14px',
     fontStyle: 'italic',
     marginTop: '12px',
   },
@@ -35,16 +35,24 @@ class Poem extends Component {
       return <div>{lineInfo.line}</div>
     });
 
+    let subtitle;
+    if (activePoem.subtitle !== null) {
+      subtitle = (
+        <Typography className={classes.subtitle}>
+          {activePoem.subtitle}
+        </Typography>
+      );
+    }
+
     return (
       <div>
         <Typography className={classes.title}>
           {activePoem.title}
         </Typography>
-        <div>
-          <Typography className={classes.text}>
-            {lines}
-          </Typography>
-        </div>
+        {subtitle}
+        <Typography className={classes.text}>
+          {lines}
+        </Typography>
       </div>
     );
   }
