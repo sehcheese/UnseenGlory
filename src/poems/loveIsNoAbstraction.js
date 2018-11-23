@@ -1,5 +1,5 @@
 export default {
-  title: 'Love is no Abstraction.txt',
+  title: 'Love is no Abstraction',
   subtitle: null,
   lines: [
     {

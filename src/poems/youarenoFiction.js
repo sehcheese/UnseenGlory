@@ -1,5 +1,5 @@
 export default {
-  title: 'You are no Fiction.txt',
+  title: 'You are no Fiction',
   subtitle: null,
   lines: [
     {

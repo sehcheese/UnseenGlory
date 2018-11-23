@@ -1,5 +1,5 @@
 export default {
-  title: 'Free at Last.txt',
+  title: 'Free at Last',
   subtitle: null,
   lines: [
     {

@@ -1,5 +1,5 @@
 export default {
-  title: 'One.txt',
+  title: 'One',
   subtitle: null,
   lines: [
     {

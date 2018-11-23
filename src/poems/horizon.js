@@ -1,5 +1,5 @@
 export default {
-  title: 'Horizon.txt',
+  title: 'Horizon',
   subtitle: null,
   lines: [
     {

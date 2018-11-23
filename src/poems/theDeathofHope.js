@@ -1,5 +1,5 @@
 export default {
-  title: 'The Death of Hope.txt',
+  title: 'The Death of Hope',
   subtitle: null,
   lines: [
     {

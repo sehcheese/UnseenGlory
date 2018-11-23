@@ -1,5 +1,5 @@
 export default {
-  title: 'Shepherd.txt',
+  title: 'Shepherd',
   subtitle: null,
   lines: [
     {

@@ -1,5 +1,5 @@
 export default {
-  title: 'Forgotten Flowers.txt',
+  title: 'Forgotten Flowers',
   subtitle: null,
   lines: [
     {

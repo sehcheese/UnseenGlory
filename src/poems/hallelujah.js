@@ -1,5 +1,5 @@
 export default {
-  title: 'Hallelujah.txt',
+  title: 'Hallelujah',
   subtitle: null,
   lines: [
     {
