@@ -11,7 +11,7 @@ export default {
       reference: null,
     },
     {
-      line: 'But there's a timeless ringing',
+      line: 'But there\'s a timeless ringing',
       reference: null,
     },
     {

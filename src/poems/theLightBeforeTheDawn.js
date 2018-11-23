@@ -3,7 +3,7 @@ export default {
   subtitle: null,
   lines: [
     {
-      line: 'Someday I'll no longer be',
+      line: 'Someday I\'ll no longer be',
       reference: null,
     },
     {
@@ -51,7 +51,7 @@ export default {
       reference: null,
     },
     {
-      line: 'Things aren't always as they seem',
+      line: 'Things aren\'t always as they seem',
       reference: null,
     },
     {

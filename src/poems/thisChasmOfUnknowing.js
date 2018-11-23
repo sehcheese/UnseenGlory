@@ -15,7 +15,7 @@ export default {
       reference: null,
     },
     {
-      line: 'And I wonder if I'll ever',
+      line: 'And I wonder if I\'ll ever',
       reference: null,
     },
     {
@@ -39,11 +39,11 @@ export default {
       reference: null,
     },
     {
-      line: 'Where I'm going',
+      line: 'Where I\'m going',
       reference: null,
     },
     {
-      line: 'Or if I'll get back again',
+      line: 'Or if I\'ll get back again',
       reference: null,
     },
     {
@@ -75,7 +75,7 @@ export default {
       reference: null,
     },
     {
-      line: 'If you won't open my eyes',
+      line: 'If you won\'t open my eyes',
       reference: null,
     },
     {
@@ -99,11 +99,11 @@ export default {
       reference: null,
     },
     {
-      line: 'Because maybe I'll never know',
+      line: 'Because maybe I\'ll never know',
       reference: null,
     },
     {
-      line: 'And maybe I don't need to',
+      line: 'And maybe I don\'t need to',
       reference: null,
     },
     {

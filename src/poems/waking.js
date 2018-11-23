@@ -7,7 +7,7 @@ export default {
       reference: null,
     },
     {
-      line: 'one summer's day',
+      line: 'one summer\'s day',
       reference: null,
     },
     {
@@ -47,7 +47,7 @@ export default {
       reference: null,
     },
     {
-      line: 'one dark summer's night',
+      line: 'one dark summer\'s night',
       reference: null,
     },
     {

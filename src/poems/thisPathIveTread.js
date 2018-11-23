@@ -1,9 +1,9 @@
 export default {
-  title: 'This Path I've Tread',
+  title: 'This Path I\'ve Tread',
   subtitle: 'Dedicated to the Covenant College graduating class of 2015',
   lines: [
     {
-      line: 'This path I've tread',
+      line: 'This path I\'ve tread',
       reference: null,
     },
     {
@@ -31,7 +31,7 @@ export default {
       reference: null,
     },
     {
-      line: 'the journey's stop',
+      line: 'the journey\'s stop',
       reference: null,
     },
     {
@@ -67,7 +67,7 @@ export default {
       reference: null,
     },
     {
-      line: 'and what's in store',
+      line: 'and what\'s in store',
       reference: null,
     },
     {
@@ -87,7 +87,7 @@ export default {
       reference: null,
     },
     {
-      line: 'an eagle's wings',
+      line: 'an eagle\'s wings',
       reference: null,
     },
     {
@@ -107,7 +107,7 @@ export default {
       reference: null,
     },
     {
-      line: 'this path I've tread',
+      line: 'this path I\'ve tread',
       reference: null,
     },
     {
@@ -115,7 +115,7 @@ export default {
       reference: null,
     },
     {
-      line: 'these words You've said:',
+      line: 'these words You\'ve said:',
       reference: null,
     },
     {

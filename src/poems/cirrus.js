@@ -75,7 +75,7 @@ export default {
       reference: null,
     },
     {
-      line: 'in heaven's sunshine–',
+      line: 'in heaven\'s sunshine–',
       reference: null,
     },
     {

@@ -7,15 +7,15 @@ export default {
       reference: null,
     },
     {
-      line: 'the birds don't sing for glory',
+      line: 'the birds don\'t sing for glory',
       reference: null,
     },
     {
-      line: 'it's only explainable, natural',
+      line: 'it\'s only explainable, natural',
       reference: null,
     },
     {
-      line: 'it's all very factual',
+      line: 'it\'s all very factual',
       reference: null,
     },
     {
@@ -31,11 +31,11 @@ export default {
       reference: null,
     },
     {
-      line: 'isn't what is real and true',
+      line: 'isn\'t what is real and true',
       reference: null,
     },
     {
-      line: 'isn't what is due',
+      line: 'isn\'t what is due',
       reference: null,
     },
     {

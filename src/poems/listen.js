@@ -15,7 +15,7 @@ export default {
       reference: null,
     },
     {
-      line: 'all this time that you've been hurrying',
+      line: 'all this time that you\'ve been hurrying',
       reference: null,
     },
     {

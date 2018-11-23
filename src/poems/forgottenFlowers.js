@@ -75,7 +75,7 @@ export default {
       reference: null,
     },
     {
-      line: 'this sinner's eyes!',
+      line: 'this sinner\'s eyes!',
       reference: null,
     },
     {
@@ -107,7 +107,7 @@ export default {
       reference: null,
     },
     {
-      line: 'at the mercy I've found',
+      line: 'at the mercy I\'ve found',
       reference: null,
     },
     {
@@ -143,11 +143,11 @@ export default {
       reference: null,
     },
     {
-      line: 'Then we'll know',
+      line: 'Then we\'ll know',
       reference: null,
     },
     {
-      line: 'just as we're known',
+      line: 'just as we\'re known',
       reference: null,
     },
     {

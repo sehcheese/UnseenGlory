@@ -55,7 +55,7 @@ export default {
       reference: null,
     },
     {
-      line: 'I'm not hidden',
+      line: 'I\'m not hidden',
       reference: null,
     },
     {

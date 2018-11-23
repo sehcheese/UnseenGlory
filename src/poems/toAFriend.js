@@ -3,11 +3,11 @@ export default {
   subtitle: null,
   lines: [
     {
-      line: 'I'm not sure if you've been loved before, truly loved',
+      line: 'I\'m not sure if you\'ve been loved before, truly loved',
       reference: null,
     },
     {
-      line: 'It's quite unlike anything else, unmistakable',
+      line: 'It\'s quite unlike anything else, unmistakable',
       reference: null,
     },
     {
@@ -27,7 +27,7 @@ export default {
       reference: null,
     },
     {
-      line: 'And perhaps I've been a vessel of sorts for love',
+      line: 'And perhaps I\'ve been a vessel of sorts for love',
       reference: null,
     },
     {
@@ -163,7 +163,7 @@ export default {
       reference: null,
     },
     {
-      line: 'Come and taste my Master's water',
+      line: 'Come and taste my Master\'s water',
       reference: null,
     },
     {

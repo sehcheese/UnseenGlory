@@ -71,7 +71,7 @@ export default {
       reference: null,
     },
     {
-      line: 'the bird's morning fanfare',
+      line: 'the bird\'s morning fanfare',
       reference: null,
     },
     {
