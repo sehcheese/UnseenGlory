@@ -14,6 +14,7 @@ import Hidden from '@material-ui/core/Hidden';
 import Poem from './Poem';
 
 import { poems, poemOrder } from './poems';
+import { unseenGloryColors, randomUnseenGloryColor } from './unseenGloryColors';
 
 const styles = {
   root: {
@@ -34,11 +35,6 @@ const styles = {
   title: {
     verticalAlign: 'middle',
   },
-  iconHover: {
-    '&:hover': {
-      color: () => '#ff6600',
-    },
-  },
 };
 
 const theme = createMuiTheme({
@@ -54,24 +50,6 @@ const theme = createMuiTheme({
 });
 
 const white = '#FFF';
-
-const unseenGloryColors = [
-  '#ff6600',
-  '#00aa00',
-  '#2E9AFE'
-];
-
-const randomUnseenGloryColor = (skipColor = null) => {
-  const availableColors = [...unseenGloryColors];
-  if (skipColor) {
-    var index = availableColors.indexOf(skipColor);
-    if (index > -1) {
-      availableColors.splice(index, 1);
-    }
-  }
-  const colorClassIndex = Math.floor(Math.random() * availableColors.length);
-  return availableColors[colorClassIndex];
-}
 
 class App extends Component {
   constructor() {
@@ -89,6 +67,7 @@ class App extends Component {
       gloryFragmentColor,
       bookIconColor: white,
       activePoemIndex: null,
+      showReferences: false,
     }
   }
 
@@ -131,12 +110,16 @@ class App extends Component {
     }));
   }
 
-  onEnterBookIcon = () => {
+  onEnterShowReferences = () => {
     this.setState(() => ({ bookIconColor: randomUnseenGloryColor(this.state.bookIconColor) }));
   }
 
-  onLeaveBookIcon = () => {
+  onLeaveShowReferences = () => {
     this.setState(() => ({ bookIconColor: white }));
+  }
+
+  onClickShowReferences = () => {
+    this.setState(() => ({ showReferences: !this.state.showReferences }));
   }
 
   render() {
@@ -203,7 +186,13 @@ class App extends Component {
                 </IconButton>
               </Hidden>
             </div>
-            <IconButton color="inherit" aria-label="Right" onMouseEnter={this.onEnterBookIcon} onMouseLeave={this.onLeaveBookIcon}>
+            <IconButton
+              color="inherit"
+              aria-label="Right"
+              onMouseEnter={this.onEnterShowReferences}
+              onMouseLeave={this.onLeaveShowReferences}
+              onClick={this.onClickShowReferences}
+            >
               <BookIcon style={{color: this.state.bookIconColor}} alignmentBaseline="middle" />
             </IconButton>
           </Toolbar>

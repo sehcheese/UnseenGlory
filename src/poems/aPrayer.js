@@ -4,7 +4,7 @@ export default {
   lines: [
     {
       line: 'Write Thy will upon my heart',
-      reference: null
+      reference: 'Test reference'
     },
     {
       line: 'Though from Thy precepts I depart',

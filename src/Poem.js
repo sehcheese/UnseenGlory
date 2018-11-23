@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography';
+import Tooltip from '@material-ui/core/Tooltip';
+
+import { unseenGloryColors } from './unseenGloryColors';
 
 const styles = {
   title: {
@@ -13,7 +16,7 @@ const styles = {
     textAlign: 'center',
     fontSize: '14px',
     fontStyle: 'italic',
-    marginTop: '12px',
+    margin: '12px 0px 5px 5px',
   },
   text: {
     fontSize: '12px',
@@ -27,12 +30,23 @@ class Poem extends Component {
   render() {
     const { activePoem, classes } = this.props;
 
-    const lines = activePoem.lines.map(lineInfo => {
+    let referenceIndex = -1;
+    const lines = activePoem.lines.map((lineInfo, index) => {
       if (lineInfo.line === '') {
-        return <br/>;
+        return <br key={index} />;
       }
 
-      return <div>{lineInfo.line}</div>
+      if (lineInfo.reference !== null) {
+        referenceIndex++;
+        const color = unseenGloryColors[referenceIndex % unseenGloryColors.length];
+        return (
+          <Tooltip title={lineInfo.reference} placement="top" key={index}>
+            <span style={{color}}>{lineInfo.line}<br /></span>
+          </Tooltip>
+        )
+      }
+
+      return <span key={index} >{lineInfo.line}<br /></span>;
     });
 
     let subtitle;
