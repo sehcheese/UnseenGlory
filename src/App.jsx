@@ -79,6 +79,11 @@ class App extends Component {
     this.setState(() => ({ drawerOpen: !this.state.drawerOpen }));
   }
 
+  onSelectPoem = (poemKey) => {
+    const activePoemIndex = alphabeticallyOrderedPoems.indexOf(poemKey);
+    if (activePoemIndex !== -1) this.setState(() => ({ activePoemIndex }));
+  }
+
   advancePoemLeft = () => {
     const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : 0;
     const newActivePoemIndex = activePoemIndex === 0 ? alphabeticallyOrderedPoems.length - 1 : activePoemIndex - 1;
@@ -146,8 +151,10 @@ class App extends Component {
     const { classes } = this.props;
 
     const alphabeticalPoemList = alphabeticallyOrderedPoems.map(poemKey => (
-      <ListItem key={poemKey}>
-        {poems[poemKey].title}
+      <ListItem button onClick={() => this.onSelectPoem(poemKey)} key={poemKey}>
+        <Typography>
+          {poems[poemKey].title}
+        </Typography>
       </ListItem>
     ));
 
