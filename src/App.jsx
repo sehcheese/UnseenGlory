@@ -75,12 +75,14 @@ class App extends Component {
   advancePoemLeft = () => {
     const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : 0;
     const newActivePoemIndex = activePoemIndex === 0 ? poemOrder.length - 1 : activePoemIndex - 1;
-    this.setState(() => ({ activePoemIndex: newActivePoemIndex }));
+    const newFragmentColors = this.newFragmentColors();
+    this.setState(() => ({ activePoemIndex: newActivePoemIndex, ...newFragmentColors }));
   }
 
   advancePoemRight = () => {
     const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : -1;
-    this.setState(() => ({ activePoemIndex: (activePoemIndex + 1) % poemOrder.length }));
+    const newFragmentColors = this.newFragmentColors();
+    this.setState(() => ({ activePoemIndex: (activePoemIndex + 1) % poemOrder.length, ...newFragmentColors }));
   }
 
   onEnterChevronLeft = () => {
@@ -99,16 +101,21 @@ class App extends Component {
     this.setState(() => ({ chevronColorRight: white }));
   }
 
-  onEnterTitleFragment = () => {
+  newFragmentColors = () => {
     const unFragmentColor = randomUnseenGloryColor(this.state.unFragmentColor);
     const seenFragmentColor = randomUnseenGloryColor(unFragmentColor);
     const gloryFragmentColor = unseenGloryColors.filter(color => color !== unFragmentColor && color !== seenFragmentColor)[0];
 
-    this.setState(() => ({
+    return {
       unFragmentColor,
       seenFragmentColor,
       gloryFragmentColor,
-    }));
+    };
+  }
+
+  onEnterTitleFragment = () => {
+    const newFragmentColors = this.newFragmentColors();
+    this.setState(() => ({ ...newFragmentColors }));
   }
 
   onEnterShowReferences = () => {
