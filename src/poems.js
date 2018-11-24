@@ -94,4 +94,4 @@ export const poems = {
 	'you-are-no-fiction': youAreNoFiction,
 };
 
-export const poemOrder = Object.keys(poems).sort();
+export const alphabeticallyOrderedPoems = Object.keys(poems).sort();

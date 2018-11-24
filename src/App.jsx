@@ -14,7 +14,7 @@ import Hidden from '@material-ui/core/Hidden';
 import Home from './Home';
 import Poem from './Poem';
 
-import { poems, poemOrder } from './poems';
+import { poems, alphabeticallyOrderedPoems } from './poems';
 import { unseenGloryColors, randomUnseenGloryColor } from './unseenGloryColors';
 
 const styles = {
@@ -74,7 +74,7 @@ class App extends Component {
 
   advancePoemLeft = () => {
     const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : 0;
-    const newActivePoemIndex = activePoemIndex === 0 ? poemOrder.length - 1 : activePoemIndex - 1;
+    const newActivePoemIndex = activePoemIndex === 0 ? alphabeticallyOrderedPoems.length - 1 : activePoemIndex - 1;
     const newFragmentColors = this.newFragmentColors();
     this.setState(() => ({ activePoemIndex: newActivePoemIndex, ...newFragmentColors }));
   }
@@ -82,7 +82,7 @@ class App extends Component {
   advancePoemRight = () => {
     const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : -1;
     const newFragmentColors = this.newFragmentColors();
-    this.setState(() => ({ activePoemIndex: (activePoemIndex + 1) % poemOrder.length, ...newFragmentColors }));
+    this.setState(() => ({ activePoemIndex: (activePoemIndex + 1) % alphabeticallyOrderedPoems.length, ...newFragmentColors }));
   }
 
   onEnterChevronLeft = () => {
@@ -140,7 +140,7 @@ class App extends Component {
 
     let content;
     if (this.state.activePoemIndex !== null) {
-      content = <Poem activePoem={poems[poemOrder[this.state.activePoemIndex]]} showReferences={this.state.showReferences} />;
+      content = <Poem activePoem={poems[alphabeticallyOrderedPoems[this.state.activePoemIndex]]} showReferences={this.state.showReferences} />;
     } else {
       content = <Home />
     }
