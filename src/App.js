@@ -115,11 +115,16 @@ class App extends Component {
   }
 
   onLeaveShowReferences = () => {
-    this.setState(() => ({ bookIconColor: white }));
+    if (!this.state.showReferences) {
+      this.setState(() => ({ bookIconColor: white }));
+    }
   }
 
   onClickShowReferences = () => {
-    this.setState(() => ({ showReferences: !this.state.showReferences }));
+    this.setState(() => ({
+      showReferences: !this.state.showReferences,
+      bookIconColor: randomUnseenGloryColor(this.state.bookIconColor),
+    }));
   }
 
   render() {
@@ -127,7 +132,7 @@ class App extends Component {
 
     let content;
     if (this.state.activePoemIndex !== null) {
-      content = <Poem activePoem={poems[poemOrder[this.state.activePoemIndex]]} />;
+      content = <Poem activePoem={poems[poemOrder[this.state.activePoemIndex]]} showReferences={this.state.showReferences} />;
     }
 
     return (

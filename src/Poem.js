@@ -5,7 +5,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 import { unseenGloryColors } from './unseenGloryColors';
 
-const styles = {
+const styles = (theme) => ({
   title: {
     textAlign: 'center',
     fontSize: '22px',
@@ -24,11 +24,31 @@ const styles = {
     width: 'fit-content',
     margin: '20px auto',
   },
-};
+  popover: {
+    pointerEvents: 'none',
+  },
+  paper: {
+    padding: theme.spacing.unit,
+  },
+});
 
 class Poem extends Component {
+  state = {
+    anchorEl: null,
+  };
+
+  handlePopoverOpen = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handlePopoverClose = () => {
+    this.setState({ anchorEl: null });
+  };
+  
   render() {
-    const { activePoem, classes } = this.props;
+    const { activePoem, classes, showReferences } = this.props;
+    const { anchorEl } = this.state;
+    const open = Boolean(anchorEl);
 
     let referenceIndex = -1;
     const lines = activePoem.lines.map((lineInfo, index) => {
@@ -36,17 +56,25 @@ class Poem extends Component {
         return <br key={index} />;
       }
 
-      if (lineInfo.reference !== null) {
+      if (showReferences && lineInfo.reference !== null) {
+        console.log(lineInfo.reference);
         referenceIndex++;
         const color = unseenGloryColors[referenceIndex % unseenGloryColors.length];
         return (
-          <Tooltip title={lineInfo.reference} placement="top" key={index}>
+          <Tooltip
+            title={lineInfo.reference}
+            placement="left"
+            disableFocusListener
+            enterTouchDelay={100}
+            leaveTouchDelay={3000}
+            key={index}
+          >
             <span style={{color}}>{lineInfo.line}<br /></span>
           </Tooltip>
-        )
+        );
       }
 
-      return <span key={index} >{lineInfo.line}<br /></span>;
+      return <span key={index}>{lineInfo.line}<br /></span>;
     });
 
     let subtitle;
