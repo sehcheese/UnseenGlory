@@ -11,7 +11,7 @@ export default {
       reference: null,
     },
     {
-      line: 'I'm small I know,',
+      line: 'I\'m small I know,',
       reference: null,
     },
     {
@@ -75,7 +75,7 @@ export default {
       reference: null,
     },
     {
-      line: 'it's hard to frown',
+      line: 'it\'s hard to frown',
       reference: null,
     },
     {
@@ -107,7 +107,7 @@ export default {
       reference: null,
     },
     {
-      line: 'but this bird's-eye view',
+      line: 'but this bird\'s-eye view',
       reference: null,
     },
     {

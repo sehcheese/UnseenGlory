@@ -87,7 +87,7 @@ export default {
       reference: null,
     },
     {
-      line: 'a hero's horse',
+      line: 'a hero\'s horse',
       reference: null,
     },
     {
@@ -123,7 +123,7 @@ export default {
       reference: null,
     },
     {
-      line: 'Where'er he walked',
+      line: 'Where\'er he walked',
       reference: null,
     },
     {

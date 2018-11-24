@@ -7,7 +7,7 @@ export default {
       reference: null,
     },
     {
-      line: 'I'm bad at writing stories',
+      line: 'I\'m bad at writing stories',
       reference: null,
     },
     {
@@ -43,7 +43,7 @@ export default {
       reference: null,
     },
     {
-      line: 'where You hadn't finished writing',
+      line: 'where You hadn\'t finished writing',
       reference: null,
     },
     {
@@ -55,7 +55,7 @@ export default {
       reference: null,
     },
     {
-      line: 'You're just beginning this book',
+      line: 'You\'re just beginning this book',
       reference: null,
     },
     {
@@ -71,7 +71,7 @@ export default {
       reference: null,
     },
     {
-      line: 'You're the only desire',
+      line: 'You\'re the only desire',
       reference: null,
     },
     {

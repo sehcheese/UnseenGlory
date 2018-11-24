@@ -103,7 +103,7 @@ export default {
       reference: null,
     },
     {
-      line: 'And I tell You that I'm distressed',
+      line: 'And I tell You that I\'m distressed',
       reference: null,
     },
     {
@@ -111,7 +111,7 @@ export default {
       reference: null,
     },
     {
-      line: 'that I have no idea what's going on',
+      line: 'that I have no idea what\'s going on',
       reference: null,
     },
     {

@@ -27,11 +27,11 @@ export default {
       reference: null,
     },
     {
-      line: 'I'm still chasing this halcyon dream',
+      line: 'I\'m still chasing this halcyon dream',
       reference: null,
     },
     {
-      line: 'but there's no wind on this water',
+      line: 'but there\'s no wind on this water',
       reference: null,
     },
     {
@@ -67,7 +67,7 @@ export default {
       reference: null,
     },
     {
-      line: 'put it in my pipe and I'll smoke it',
+      line: 'put it in my pipe and I\'ll smoke it',
       reference: null,
     },
     {

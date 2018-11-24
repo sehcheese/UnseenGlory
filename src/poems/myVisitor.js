@@ -127,7 +127,7 @@ export default {
       reference: null,
     },
     {
-      line: 'I couldn't help but smile',
+      line: 'I couldn\'t help but smile',
       reference: null,
     },
     {

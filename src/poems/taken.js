@@ -91,7 +91,7 @@ export default {
       reference: null,
     },
     {
-      line: 'all that's sad will come untrue',
+      line: 'all that\'s sad will come untrue',
       reference: null,
     },
     {
@@ -99,7 +99,7 @@ export default {
       reference: null,
     },
     {
-      line: 'In the morning joy you'll know',
+      line: 'In the morning joy you\'ll know',
       reference: null,
     },
     {

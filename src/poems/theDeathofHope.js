@@ -19,7 +19,7 @@ export default {
       reference: null,
     },
     {
-      line: 'Hope is realized in death's',
+      line: 'Hope is realized in death\'s',
       reference: null,
     },
     {
@@ -43,7 +43,7 @@ export default {
       reference: null,
     },
     {
-      line: 'at all; this dead body's life is',
+      line: 'at all; this dead body\'s life is',
       reference: null,
     },
     {

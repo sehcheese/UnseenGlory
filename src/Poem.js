@@ -32,23 +32,9 @@ const styles = (theme) => ({
   },
 });
 
-class Poem extends Component {
-  state = {
-    anchorEl: null,
-  };
-
-  handlePopoverOpen = event => {
-    this.setState({ anchorEl: event.currentTarget });
-  };
-
-  handlePopoverClose = () => {
-    this.setState({ anchorEl: null });
-  };
-  
+class Poem extends Component {  
   render() {
     const { activePoem, classes, showReferences } = this.props;
-    const { anchorEl } = this.state;
-    const open = Boolean(anchorEl);
 
     let referenceIndex = -1;
     const lines = activePoem.lines.map((lineInfo, index) => {
@@ -57,8 +43,10 @@ class Poem extends Component {
       }
 
       if (showReferences && lineInfo.reference !== null) {
-        console.log(lineInfo.reference);
-        referenceIndex++;
+        if (index > 0 && lineInfo.reference !== activePoem.lines[index - 1].reference) {
+          referenceIndex++;
+        }
+        
         const color = unseenGloryColors[referenceIndex % unseenGloryColors.length];
         return (
           <Tooltip

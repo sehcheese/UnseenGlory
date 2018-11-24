@@ -7,7 +7,7 @@ export default {
       reference: null,
     },
     {
-      line: 'I think I'm beginning to understand',
+      line: 'I think I\'m beginning to understand',
       reference: null,
     },
     {
@@ -15,11 +15,11 @@ export default {
       reference: null,
     },
     {
-      line: 'but that doesn't limit the possibilities',
+      line: 'but that doesn\'t limit the possibilities',
       reference: null,
     },
     {
-      line: 'because possibly there's more than my finity',
+      line: 'because possibly there\'s more than my finity',
       reference: null,
     },
     {

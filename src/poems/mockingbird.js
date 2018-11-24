@@ -27,7 +27,7 @@ export default {
       reference: null,
     },
     {
-      line: 'I would say it's my work of art',
+      line: 'I would say it\'s my work of art',
       reference: null,
     },
     {
@@ -47,7 +47,7 @@ export default {
       reference: null,
     },
     {
-      line: 'seeking, striving, for what's true',
+      line: 'seeking, striving, for what\'s true',
       reference: null,
     },
     {

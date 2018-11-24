@@ -67,7 +67,7 @@ export default {
       reference: null,
     },
     {
-      line: 'your father's face',
+      line: 'your father\'s face',
       reference: null,
     },
     {
@@ -95,7 +95,7 @@ export default {
       reference: null,
     },
     {
-      line: 'I'll ever need',
+      line: 'I\'ll ever need',
       reference: null,
     },
     {
