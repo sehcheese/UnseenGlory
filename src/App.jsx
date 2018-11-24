@@ -7,6 +7,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Drawer from '@material-ui/core/Drawer';
+import ListItem from '@material-ui/core/ListItem';
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
 import BookIcon from '@material-ui/icons/Book';
@@ -69,7 +71,12 @@ class App extends Component {
       bookIconColor: white,
       activePoemIndex: null,
       showReferences: false,
+      drawerOpen: false,
     }
+  }
+
+  toggleDrawer = () => {
+    this.setState(() => ({ drawerOpen: !this.state.drawerOpen }));
   }
 
   advancePoemLeft = () => {
@@ -138,6 +145,12 @@ class App extends Component {
   render() {
     const { classes } = this.props;
 
+    const alphabeticalPoemList = alphabeticallyOrderedPoems.map(poemKey => (
+      <ListItem key={poemKey}>
+        {poems[poemKey].title}
+      </ListItem>
+    ));
+
     let content;
     if (this.state.activePoemIndex !== null) {
       content = <Poem activePoem={poems[alphabeticallyOrderedPoems[this.state.activePoemIndex]]} showReferences={this.state.showReferences} />;
@@ -150,9 +163,19 @@ class App extends Component {
         <CssBaseline />
         <AppBar position="static">
           <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            <IconButton onClick={this.toggleDrawer} className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
             </IconButton>
+            <Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer}>
+              <div
+                tabIndex={0}
+                role="button"
+                onClick={this.toggleDrawer}
+                onKeyDown={this.toggleDrawer}
+              >
+                {alphabeticalPoemList}
+              </div>
+            </Drawer>
             <div className={classes.appBarTitle}>
               <Hidden smDown>
                 <IconButton
