@@ -80,7 +80,7 @@ class App extends Component {
   }
 
   onSelectPoem = (poemKey) => {
-    const activePoemIndex = alphabeticallyOrderedPoems.indexOf(poemKey);
+    const activePoemIndex = semanticallyOrderedPoems.indexOf(poemKey);
     if (activePoemIndex !== -1) this.setState(() => ({ activePoemIndex }));
   }
 
