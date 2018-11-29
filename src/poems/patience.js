@@ -68,7 +68,7 @@ export default {
     },
     {
       line: 'in keeping Your promises You are not slow',
-      reference: null,
+      reference: '2 Peter 3:9',
     },
     {
       line: '',
@@ -76,7 +76,7 @@ export default {
     },
     {
       line: 'Patience is suffering, the common root',
-      reference: null,
+      reference: 'Eric Youngblood',
     },
     {
       line: 'from which the tree of life will shoot',
@@ -88,7 +88,7 @@ export default {
     },
     {
       line: 'Granting healing to the nations',
-      reference: null,
+      reference: 'Revelation 22:2',
     },
     {
       line: 'for all of our gross impatience',
@@ -128,7 +128,7 @@ export default {
     },
     {
       line: 'yet indeed your cup will overflow',
-      reference: null,
+      reference: 'Psalm 23:5',
     },
     {
       line: '',
@@ -136,11 +136,11 @@ export default {
     },
     {
       line: 'Not the hero of your own story',
-      reference: null,
+      reference: 'John Holland',
     },
     {
       line: 'ask the Grower to show you His glory',
-      reference: null,
+      reference: 'Exodus 33:18',
     },
   ],
 };
