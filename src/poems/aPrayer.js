@@ -4,11 +4,11 @@ export default {
   lines: [
     {
       line: 'Write Thy will upon my heart',
-      reference: null,
+      reference: 'test',
     },
     {
       line: 'Though from Thy precepts I depart',
-      reference: null,
+      reference: 'test',
     },
     {
       line: 'Make Thy law a blissful chase',

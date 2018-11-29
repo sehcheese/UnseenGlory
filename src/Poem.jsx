@@ -36,7 +36,7 @@ class Poem extends Component {
   render() {
     const { activePoem, classes, showReferences } = this.props;
 
-    let referenceIndex = -1;
+    let referenceIndex = 0;
     const lines = activePoem.lines.map((lineInfo, index) => {
       if (lineInfo.line === '') {
         return <br key={index} />;
