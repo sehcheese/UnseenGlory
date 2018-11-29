@@ -4,11 +4,11 @@ export default {
   lines: [
     {
       line: 'Seldom noticed, always heard',
-      reference: 'test',
+      reference: null,
     },
     {
       line: 'you know me as the mockingbird',
-      reference: 'teafdsa',
+      reference: null,
     },
     {
       line: 'My nominal, focal trait',

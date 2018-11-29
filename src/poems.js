@@ -23,6 +23,7 @@ import myTimesAreInYourHand from './poems/myTimesAreInYourHand';
 import myVisitor from './poems/myVisitor';
 import noon from './poems/noon';
 import one from './poems/one';
+import patience from './poems/patience';
 import peaceMySoul from './poems/peaceMySoul';
 import pegasus from './poems/pegasus';
 import sanctifying from './poems/sanctifying';
@@ -71,6 +72,7 @@ export const poems = {
 	'my-visitor': myVisitor,
 	'noon': noon,
 	'one': one,
+	'patience': patience,
 	'peace-my-soul': peaceMySoul,
 	'pegasus': pegasus,
 	'sanctifying': sanctifying,
@@ -110,6 +112,7 @@ export const semanticallyOrderedPoems = [
 	'sanctifying',
 	'my-times-are-in-your-hand',
 	'my-end',
+	'patience',
 	'this-path-ive-tread',
 	'taken',
 	'a-prayer',
