@@ -19,10 +19,11 @@ import Poem from './Poem';
 import { poems, alphabeticallyOrderedPoems, semanticallyOrderedPoems } from './poems';
 import { unseenGloryColors, randomUnseenGloryColor } from './unseenGloryColors';
 
-const styles = {
+const styles = (theme) => ({
   root: {
     flexGrow: 1,
   },
+  appBar: theme.mixins.toolbar,
   appBarTitle: {
     width: '100%',
     textAlign: 'center',
@@ -44,7 +45,7 @@ const styles = {
   drawerButtonText: {
     color: 'white',
   },
-};
+});
 
 const theme = createMuiTheme({
   palette: {
@@ -174,7 +175,7 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        <AppBar position="static">
+        <AppBar>
           <Toolbar>
             <IconButton onClick={this.toggleDrawer} className={classes.menuButton} color="inherit" aria-label="Menu">
               <MenuIcon />
@@ -249,6 +250,7 @@ class App extends Component {
             </IconButton>
           </Toolbar>
         </AppBar>
+        <div className={classes.appBar} />
         {content}
       </MuiThemeProvider>
     );
