@@ -38,12 +38,18 @@ const styles = {
   title: {
     verticalAlign: 'middle',
   },
+  drawer: {
+    backgroundColor: 'black',
+  },
+  drawerButtonText: {
+    color: 'white',
+  },
 };
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#000",
+      main: '#000',
     },
     secondary: blueGrey,
   },
@@ -153,7 +159,7 @@ class App extends Component {
     const alphabeticalPoemList = alphabeticallyOrderedPoems.map(poemKey => (
       <ListItem button onClick={() => this.onSelectPoem(poemKey)} key={poemKey}>
         <Typography>
-          {poems[poemKey].title}
+          <span className={classes.drawerButtonText}>{poems[poemKey].title}</span>
         </Typography>
       </ListItem>
     ));
@@ -175,6 +181,7 @@ class App extends Component {
             </IconButton>
             <Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer}>
               <div
+                className={classes.drawer}
                 tabIndex={0}
                 role="button"
                 onClick={this.toggleDrawer}
