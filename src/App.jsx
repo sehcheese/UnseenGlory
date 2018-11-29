@@ -31,6 +31,7 @@ const styles = (theme) => ({
   appBarTitleElement: {
     display: 'inline',
     verticalAlign: 'middle',
+    cursor: 'pointer',
   },
   menuButton: {
     marginLeft: -12,
@@ -137,6 +138,10 @@ class App extends Component {
     this.setState(() => ({ ...newFragmentColors }));
   }
 
+  showHome = () => {
+    this.setState(() => ({ activePoemIndex: null }));
+  }
+
   onEnterShowReferences = () => {
     this.setState(() => ({ bookIconColor: randomUnseenGloryColor(this.state.bookIconColor) }));
   }
@@ -203,7 +208,7 @@ class App extends Component {
                   <ChevronLeft style={{color: this.state.chevronColorLeft}} fontSize="large" alignmentBaseline="middle" />
                 </IconButton>
               </Hidden>
-              <Typography className={classes.appBarTitleElement} variant="h5" color="inherit" align="center">
+              <Typography className={classes.appBarTitleElement} variant="h5" color="inherit" align="center" onClick={this.showHome}>
                 <span
                   className={classes.title}
                   style={{color: this.state.unFragmentColor}}
