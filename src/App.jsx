@@ -165,9 +165,12 @@ class App extends Component {
   }
 
   onClickShowReferences = () => {
+    const bookIconColor = !this.state.showReferences
+      ? randomUnseenGloryColor(this.state.bookIconColor)
+      : white;
     this.setState(() => ({
       showReferences: !this.state.showReferences,
-      bookIconColor: randomUnseenGloryColor(this.state.bookIconColor),
+      bookIconColor,
     }));
   }
 
