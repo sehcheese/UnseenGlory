@@ -13,6 +13,7 @@ import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
 import BookIcon from '@material-ui/icons/Book';
 import Hidden from '@material-ui/core/Hidden';
+import Slide from '@material-ui/core/Slide';
 import Home from './Home';
 import Poem from './Poem';
 
@@ -35,7 +36,6 @@ const styles = (theme) => ({
   },
   menuButton: {
     marginLeft: -12,
-    marginRight: 20,
   },
   title: {
     verticalAlign: 'middle',
@@ -45,6 +45,16 @@ const styles = (theme) => ({
   },
   drawerButtonText: {
     color: 'white',
+  },
+  bottomNavBar: {
+    top: 'auto',
+    bottom: 0,
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%',
+  },
+  bottomNavBarElement: {
+    flexGrow: 1,
   },
 });
 
@@ -80,6 +90,7 @@ class App extends Component {
       activePoemIndex: null,
       showReferences: false,
       drawerOpen: false,
+      transition: true,
     }
   }
 
@@ -102,7 +113,8 @@ class App extends Component {
   advancePoemRight = () => {
     const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : -1;
     const newFragmentColors = this.newFragmentColors();
-    this.setState(() => ({ activePoemIndex: (activePoemIndex + 1) % semanticallyOrderedPoems.length, ...newFragmentColors }));
+    this.setState(() => ({ transition: false }));
+    this.setState(() => ({ activePoemIndex: (activePoemIndex + 1) % semanticallyOrderedPoems.length, ...newFragmentColors, transition: true }));
   }
 
   onEnterChevronLeft = () => {
@@ -257,6 +269,29 @@ class App extends Component {
         </AppBar>
         <div className={classes.appBar} />
         {content}
+        <Hidden mdUp>
+          <AppBar className={classes.bottomNavBar}>
+            <IconButton
+              className={classes.bottomNavBarElement}
+              color="inherit" aria-label="Left"
+              onMouseEnter={this.onEnterChevronLeft}
+              onMouseLeave={this.onLeaveChevronLeft}
+              onClick={this.advancePoemLeft}
+            >
+              <ChevronLeft fontSize="large" alignmentBaseline="middle" />
+            </IconButton>
+            <IconButton
+              className={classes.bottomNavBarElement}
+              color="inherit" aria-label="Right"
+              onMouseEnter={this.onEnterChevronRight}
+              onMouseLeave={this.onLeaveChevronRight}
+              onClick={this.advancePoemRight}
+            >
+              <ChevronRight fontSize="large" alignmentBaseline="middle" />
+            </IconButton>
+          </AppBar>
+          <div className={classes.appBar} />
+        </Hidden>
       </MuiThemeProvider>
     );
   }
