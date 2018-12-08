@@ -35,15 +35,13 @@ class Home extends Component {
           1 Peter 1:8
         </Typography>
         <Typography className={classes.homeContent}>
-          <span className={classes.quote}>"The glory must be believed."</span><br />
+          <span className={classes.quote}>"Now faith is being sure of what we hope for and certain of what we do not see."</span><br />
           Søren Kierkegaard
         </Typography>
         <Divider />
         <Typography className={classes.homeContent}>
-          If this poetry seems didactic, it is only because I am instructing my own soul.<br />
-          If this poetry seems dogmatic, it is only because I am convincing myself.<br />
-          If this poetry seems enigmatic, it is only because I grasp at mysteries.<br />
-          If this poetry seems poetic, perhaps I've succeeded.<br />
+          <span className={classes.quote}>"The glory must be believed."</span><br />
+          Søren Kierkegaard
         </Typography>
         <Divider />
         <Typography className={classes.homeContent}>

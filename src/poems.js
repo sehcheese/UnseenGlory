@@ -40,6 +40,7 @@ import thisChasmOfUnknowing from './poems/thisChasmOfUnknowing';
 import thisPathIveTread from './poems/thisPathIveTread';
 import toAFriend from './poems/toAFriend';
 import toEveryQuestion from './poems/toEveryQuestion';
+import trinityPrayer from './poems/trinityPrayer';
 import truthBeTold from './poems/truthBeTold';
 import twelveEleven from './poems/twelveEleven';
 import waking from './poems/waking';
@@ -75,6 +76,7 @@ export const poems = {
 	'patience': patience,
 	'peace-my-soul': peaceMySoul,
 	'pegasus': pegasus,
+	'prologue': prologue,
 	'sanctifying': sanctifying,
 	'seasons': seasons,
 	'shepherd': shepherd,
@@ -89,6 +91,7 @@ export const poems = {
 	'this-path-ive-tread': thisPathIveTread,
 	'to-a-friend': toAFriend,
 	'to-every-question': toEveryQuestion,
+	'trinity-prayer': trinityPrayer,
 	'truth-be-told': truthBeTold,
 	'twelve-eleven': twelveEleven,
 	'waking': waking,
@@ -99,6 +102,7 @@ export const poems = {
 export const alphabeticallyOrderedPoems = Object.keys(poems).sort();
 
 export const semanticallyOrderedPoems = [
+	'prologue',
 	'mockingbird',
 	'the-light-before-the-dawn',
 	'summons',
@@ -120,6 +124,7 @@ export const semanticallyOrderedPoems = [
 	'hallelujah',
 	'halcyon-dreams',
 	'free-at-last',
+	'trinity-prayer',
 	'easter',
 	'forgotten-flowers',
 	'cirrus',

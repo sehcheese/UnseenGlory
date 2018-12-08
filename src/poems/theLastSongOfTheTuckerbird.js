@@ -3,14 +3,6 @@ export default {
   subtitle: null,
   lines: [
     {
-      line: 'The Last Song of the Tuckerbird',
-      reference: null,
-    },
-    {
-      line: '',
-      reference: null,
-    },
-    {
       line: 'The night breeze blows gently',
       reference: null,
     },

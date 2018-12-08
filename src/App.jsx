@@ -13,7 +13,7 @@ import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
 import BookIcon from '@material-ui/icons/Book';
 import Hidden from '@material-ui/core/Hidden';
-import Slide from '@material-ui/core/Slide';
+import Fade from '@material-ui/core/Fade';
 import Home from './Home';
 import Poem from './Poem';
 
@@ -58,6 +58,8 @@ const styles = (theme) => ({
   },
 });
 
+const timeout = 500;
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -90,7 +92,7 @@ class App extends Component {
       activePoemIndex: null,
       showReferences: false,
       drawerOpen: false,
-      transition: true,
+      elementIn: true, // Used for transitions
     }
   }
 
@@ -113,8 +115,8 @@ class App extends Component {
   advancePoemRight = () => {
     const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : -1;
     const newFragmentColors = this.newFragmentColors();
-    this.setState(() => ({ transition: false }));
-    this.setState(() => ({ activePoemIndex: (activePoemIndex + 1) % semanticallyOrderedPoems.length, ...newFragmentColors, transition: true }));
+    this.setState(() => ({ elementIn: false }));
+    setTimeout(() => this.setState(() => ({ activePoemIndex: (activePoemIndex + 1) % semanticallyOrderedPoems.length, ...newFragmentColors, elementIn: true })), timeout);
   }
 
   onEnterChevronLeft = () => {
@@ -184,7 +186,7 @@ class App extends Component {
         </Typography>
       </ListItem>
     ));
-
+    console.log(this.state.elementIn);
     let content;
     if (this.state.activePoemIndex !== null) {
       content = <Poem activePoem={poems[semanticallyOrderedPoems[this.state.activePoemIndex]]} showReferences={this.state.showReferences} />;
@@ -271,7 +273,9 @@ class App extends Component {
           </Toolbar>
         </AppBar>
         <div className={classes.appBar} />
-        {content}
+        <Fade in={this.state.elementIn} timeout={timeout}>
+          {content}
+        </Fade>
         <Hidden mdUp>
           <AppBar className={classes.bottomNavBar}>
             <IconButton
