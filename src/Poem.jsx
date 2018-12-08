@@ -21,14 +21,14 @@ const styles = (theme) => ({
   text: {
     fontSize: '12px',
     fontStyle: 'regular',
+    margin: '20px 5px',
+    padding: '0 0 10px 0',
+    overflowX: 'auto',
+    whiteSpace: 'nowrap',
+  },
+  centeredText: {
     width: 'fit-content',
-    margin: '20px auto',
-  },
-  popover: {
-    pointerEvents: 'none',
-  },
-  paper: {
-    padding: theme.spacing.unit,
+    margin: '0 auto',
   },
 });
 
@@ -81,7 +81,9 @@ class Poem extends Component {
         </Typography>
         {subtitle}
         <Typography className={classes.text}>
-          {lines}
+          <div className={classes.centeredText}>
+            {lines}
+          </div>
         </Typography>
       </div>
     );
