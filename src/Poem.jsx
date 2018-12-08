@@ -80,11 +80,11 @@ class Poem extends Component {
           {activePoem.title}
         </Typography>
         {subtitle}
-        <Typography className={classes.text}>
-          <div className={classes.centeredText}>
+        <div className={classes.text}>
+          <Typography className={classes.centeredText}>
             {lines}
-          </div>
-        </Typography>
+          </Typography>
+        </div>
       </div>
     );
   }

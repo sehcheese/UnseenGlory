@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -55,6 +56,9 @@ const styles = (theme) => ({
   },
   bottomNavBarElement: {
     flexGrow: 1,
+  },
+  reactRouterLink: {
+    textDecoration: 'none',
   },
 });
 
@@ -181,124 +185,126 @@ class App extends Component {
 
     const alphabeticalPoemList = alphabeticallyOrderedPoems.map(poemKey => (
       <ListItem button onClick={() => this.onSelectPoem(poemKey)} key={poemKey}>
-        <Typography>
-          <span className={classes.drawerButtonText}>{poems[poemKey].title}</span>
-        </Typography>
+        <Link to={`/${poemKey}`} className={classes.reactRouterLink}>
+          <Typography>
+            <span className={classes.drawerButtonText}>{poems[poemKey].title}</span>
+          </Typography>
+        </Link>
       </ListItem>
     ));
-    console.log(this.state.elementIn);
-    let content;
-    if (this.state.activePoemIndex !== null) {
-      content = <Poem activePoem={poems[semanticallyOrderedPoems[this.state.activePoemIndex]]} showReferences={this.state.showReferences} />;
-    } else {
-      content = <Home />
-    }
 
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        <AppBar>
-          <Toolbar>
-            <IconButton onClick={this.toggleDrawer} className={classes.menuButton} color="inherit" aria-label="Menu">
-              <MenuIcon />
-            </IconButton>
-            <Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer}>
-              <div
-                className={classes.drawer}
-                tabIndex={0}
-                role="button"
-                onClick={this.toggleDrawer}
-                onKeyDown={this.toggleDrawer}
-              >
-                {alphabeticalPoemList}
-              </div>
-            </Drawer>
-            <div className={classes.appBarTitle}>
-              <Hidden smDown>
+        <BrowserRouter>
+          <React.Fragment>
+            <AppBar>
+              <Toolbar>
+                <IconButton onClick={this.toggleDrawer} className={classes.menuButton} color="inherit" aria-label="Menu">
+                  <MenuIcon />
+                </IconButton>
+                <Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer}>
+                  <div
+                    className={classes.drawer}
+                    tabIndex={0}
+                    role="button"
+                    onClick={this.toggleDrawer}
+                    onKeyDown={this.toggleDrawer}
+                  >
+                    {alphabeticalPoemList}
+                  </div>
+                </Drawer>
+                <div className={classes.appBarTitle}>
+                  <Hidden xsDown>
+                    <IconButton
+                      className={classes.appBarTitleElement}
+                      color="inherit" aria-label="Left"
+                      onMouseEnter={this.onEnterChevronLeft}
+                      onMouseLeave={this.onLeaveChevronLeft}
+                      onClick={this.advancePoemLeft}
+                    >
+                      <ChevronLeft style={{color: this.state.chevronColorLeft}} fontSize="large" alignmentBaseline="middle" />
+                    </IconButton>
+                  </Hidden>
+                  <Link to="/" className={classes.reactRouterLink}>
+                    <Typography className={classes.appBarTitleElement} variant="h5" color="inherit" align="center" onClick={this.showHome}>
+                      <span
+                        className={classes.title}
+                        style={{color: this.state.unFragmentColor}}
+                        onMouseEnter={this.onEnterTitleFragment}
+                      >
+                        UN
+                      </span>
+                      <span
+                        className={classes.title}
+                        style={{color: this.state.seenFragmentColor}}
+                        onMouseEnter={this.onEnterTitleFragment}
+                      >
+                        SEEN
+                      </span>
+                      <span className={classes.title}> </span>
+                      <span
+                        className={classes.title}
+                        style={{color: this.state.gloryFragmentColor}}
+                        onMouseEnter={this.onEnterTitleFragment}
+                      >
+                        GLORY
+                      </span>
+                    </Typography>
+                  </Link>
+                  <Hidden xsDown>
+                    <IconButton
+                      className={classes.appBarTitleElement}
+                      color="inherit" aria-label="Right"
+                      onMouseEnter={this.onEnterChevronRight}
+                      onMouseLeave={this.onLeaveChevronRight}
+                      onClick={this.advancePoemRight}
+                    >
+                      <ChevronRight style={{color: this.state.chevronColorRight}} fontSize="large" alignmentBaseline="middle" />
+                    </IconButton>
+                  </Hidden>
+                </div>
                 <IconButton
-                  className={classes.appBarTitleElement}
+                  color="inherit"
+                  aria-label="Right"
+                  onMouseEnter={this.onEnterShowReferences}
+                  onMouseLeave={this.onLeaveShowReferences}
+                  onClick={this.onClickShowReferences}
+                >
+                  <BookIcon style={{color: this.state.bookIconColor}} alignmentBaseline="middle" />
+                </IconButton>
+              </Toolbar>
+            </AppBar>
+            <div className={classes.appBar} />
+            <Route exact path="/" component={Home} />
+            <Route path="/:poemKey" render={({ match }) => (
+              <Poem activePoem={poems[match.params.poemKey]} showReferences={this.state.showReferences} />
+            )} />
+            <Hidden smUp>
+              <AppBar className={classes.bottomNavBar}>
+                <IconButton
+                  className={classes.bottomNavBarElement}
                   color="inherit" aria-label="Left"
                   onMouseEnter={this.onEnterChevronLeft}
                   onMouseLeave={this.onLeaveChevronLeft}
                   onClick={this.advancePoemLeft}
                 >
-                  <ChevronLeft style={{color: this.state.chevronColorLeft}} fontSize="large" alignmentBaseline="middle" />
+                  <ChevronLeft fontSize="large" alignmentBaseline="middle" />
                 </IconButton>
-              </Hidden>
-              <Typography className={classes.appBarTitleElement} variant="h5" color="inherit" align="center" onClick={this.showHome}>
-                <span
-                  className={classes.title}
-                  style={{color: this.state.unFragmentColor}}
-                  onMouseEnter={this.onEnterTitleFragment}
-                >
-                  UN
-                </span>
-                <span
-                  className={classes.title}
-                  style={{color: this.state.seenFragmentColor}}
-                  onMouseEnter={this.onEnterTitleFragment}
-                >
-                  SEEN
-                </span>
-                <span className={classes.title}> </span>
-                <span
-                  className={classes.title}
-                  style={{color: this.state.gloryFragmentColor}}
-                  onMouseEnter={this.onEnterTitleFragment}
-                >
-                  GLORY
-                </span>
-              </Typography>
-              <Hidden smDown>
                 <IconButton
-                  className={classes.appBarTitleElement}
+                  className={classes.bottomNavBarElement}
                   color="inherit" aria-label="Right"
                   onMouseEnter={this.onEnterChevronRight}
                   onMouseLeave={this.onLeaveChevronRight}
                   onClick={this.advancePoemRight}
                 >
-                  <ChevronRight style={{color: this.state.chevronColorRight}} fontSize="large" alignmentBaseline="middle" />
+                  <ChevronRight fontSize="large" alignmentBaseline="middle" />
                 </IconButton>
-              </Hidden>
-            </div>
-            <IconButton
-              color="inherit"
-              aria-label="Right"
-              onMouseEnter={this.onEnterShowReferences}
-              onMouseLeave={this.onLeaveShowReferences}
-              onClick={this.onClickShowReferences}
-            >
-              <BookIcon style={{color: this.state.bookIconColor}} alignmentBaseline="middle" />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <div className={classes.appBar} />
-        <Fade in={this.state.elementIn} timeout={timeout}>
-          {content}
-        </Fade>
-        <Hidden mdUp>
-          <AppBar className={classes.bottomNavBar}>
-            <IconButton
-              className={classes.bottomNavBarElement}
-              color="inherit" aria-label="Left"
-              onMouseEnter={this.onEnterChevronLeft}
-              onMouseLeave={this.onLeaveChevronLeft}
-              onClick={this.advancePoemLeft}
-            >
-              <ChevronLeft fontSize="large" alignmentBaseline="middle" />
-            </IconButton>
-            <IconButton
-              className={classes.bottomNavBarElement}
-              color="inherit" aria-label="Right"
-              onMouseEnter={this.onEnterChevronRight}
-              onMouseLeave={this.onLeaveChevronRight}
-              onClick={this.advancePoemRight}
-            >
-              <ChevronRight fontSize="large" alignmentBaseline="middle" />
-            </IconButton>
-          </AppBar>
-          <div className={classes.appBar} />
-        </Hidden>
+              </AppBar>
+              <div className={classes.appBar} />
+            </Hidden>
+          </React.Fragment>
+        </BrowserRouter>
       </MuiThemeProvider>
     );
   }
