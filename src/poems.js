@@ -26,6 +26,7 @@ import one from './poems/one';
 import patience from './poems/patience';
 import peaceMySoul from './poems/peaceMySoul';
 import pegasus from './poems/pegasus';
+import prologue from './poems/prologue';
 import sanctifying from './poems/sanctifying';
 import seasons from './poems/seasons';
 import shepherd from './poems/shepherd';
