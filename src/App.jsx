@@ -90,6 +90,10 @@ class App extends Component {
     const seenFragmentColor = randomUnseenGloryColor(unFragmentColor);
     const gloryFragmentColor = unseenGloryColors.filter(color => color !== unFragmentColor && color !== seenFragmentColor)[0];
 
+    const activePoemIndex = window.document.location.pathname != ''
+      ? semanticallyOrderedPoems.indexOf(window.document.location.pathname.substring(1))
+      : null;
+
     this.state = {
       chevronColorLeft: white,
       chevronColorRight: white,
@@ -97,7 +101,7 @@ class App extends Component {
       seenFragmentColor,
       gloryFragmentColor,
       bookIconColor: white,
-      activePoemIndex: null,
+      activePoemIndex,
       showReferences: false,
       drawerOpen: false,
       elementIn: true, // Used for transitions
@@ -208,7 +212,7 @@ class App extends Component {
         </Link>
       </ListItem>
     ));
-    console.log(this.getLeftPoemIndex());
+
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
@@ -298,7 +302,7 @@ class App extends Component {
             <div className={classes.appBar} />
             <Route exact path="/" component={Home} />
             <Route path="/:poemKey" render={({ match }) => (
-              <Poem activePoem={poems[match.params.poemKey]} showReferences={this.state.showReferences} />
+                <Poem activePoem={poems[match.params.poemKey]} showReferences={this.state.showReferences} />
             )} />
             <Hidden smUp>
               <AppBar className={classes.bottomNavBar}>
