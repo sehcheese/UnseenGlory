@@ -56,6 +56,10 @@ const styles = (theme) => ({
   },
   bottomNavBarElement: {
     flexGrow: 1,
+    textAlign: 'center',
+  },
+  bottomNavBarArrow: {
+    color: 'white',
   },
   reactRouterLink: {
     textDecoration: 'none',
@@ -106,21 +110,33 @@ class App extends Component {
 
   onSelectPoem = (poemKey) => {
     const activePoemIndex = semanticallyOrderedPoems.indexOf(poemKey);
-    if (activePoemIndex !== -1) this.setState(() => ({ activePoemIndex }));
+    if (activePoemIndex !== -1) {
+      const newFragmentColors = this.newFragmentColors();
+      this.setState(() => ({ activePoemIndex, ...newFragmentColors }));
+    }
+  }
+
+  getLeftPoemIndex = () => {
+    const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : 0;
+    const leftPoemIndex = activePoemIndex === 0 ? semanticallyOrderedPoems.length - 1 : activePoemIndex - 1;
+    return leftPoemIndex;
   }
 
   advancePoemLeft = () => {
-    const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : 0;
-    const newActivePoemIndex = activePoemIndex === 0 ? semanticallyOrderedPoems.length - 1 : activePoemIndex - 1;
     const newFragmentColors = this.newFragmentColors();
-    this.setState(() => ({ activePoemIndex: newActivePoemIndex, ...newFragmentColors }));
+    this.setState(() => ({ activePoemIndex: this.getLeftPoemIndex(), ...newFragmentColors }));
   }
 
   advancePoemRight = () => {
-    const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : -1;
+    const rightPoemIndex = this.getRightPoemIndex();
     const newFragmentColors = this.newFragmentColors();
-    this.setState(() => ({ elementIn: false }));
-    setTimeout(() => this.setState(() => ({ activePoemIndex: (activePoemIndex + 1) % semanticallyOrderedPoems.length, ...newFragmentColors, elementIn: true })), timeout);
+   this.setState(() => ({ activePoemIndex: rightPoemIndex, ...newFragmentColors, elementIn: true }));
+  }
+
+  getRightPoemIndex = () => {
+    const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : -1;
+    const rightPoemIndex = (activePoemIndex + 1) % semanticallyOrderedPoems.length;
+    return rightPoemIndex;
   }
 
   onEnterChevronLeft = () => {
@@ -192,7 +208,7 @@ class App extends Component {
         </Link>
       </ListItem>
     ));
-
+    console.log(this.getLeftPoemIndex());
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
@@ -216,15 +232,17 @@ class App extends Component {
                 </Drawer>
                 <div className={classes.appBarTitle}>
                   <Hidden xsDown>
-                    <IconButton
-                      className={classes.appBarTitleElement}
-                      color="inherit" aria-label="Left"
-                      onMouseEnter={this.onEnterChevronLeft}
-                      onMouseLeave={this.onLeaveChevronLeft}
-                      onClick={this.advancePoemLeft}
-                    >
-                      <ChevronLeft style={{color: this.state.chevronColorLeft}} fontSize="large" alignmentBaseline="middle" />
-                    </IconButton>
+                    <Link to={semanticallyOrderedPoems[this.getLeftPoemIndex()]} className={classes.reactRouterLink}>
+                      <IconButton
+                        className={classes.appBarTitleElement}
+                        color="inherit" aria-label="Left"
+                        onMouseEnter={this.onEnterChevronLeft}
+                        onMouseLeave={this.onLeaveChevronLeft}
+                        onClick={this.advancePoemLeft}
+                      >
+                        <ChevronLeft style={{color: this.state.chevronColorLeft}} fontSize="large" alignmentBaseline="middle" />
+                      </IconButton>
+                    </Link>
                   </Hidden>
                   <Link to="/" className={classes.reactRouterLink}>
                     <Typography className={classes.appBarTitleElement} variant="h5" color="inherit" align="center" onClick={this.showHome}>
@@ -253,15 +271,17 @@ class App extends Component {
                     </Typography>
                   </Link>
                   <Hidden xsDown>
-                    <IconButton
-                      className={classes.appBarTitleElement}
-                      color="inherit" aria-label="Right"
-                      onMouseEnter={this.onEnterChevronRight}
-                      onMouseLeave={this.onLeaveChevronRight}
-                      onClick={this.advancePoemRight}
-                    >
-                      <ChevronRight style={{color: this.state.chevronColorRight}} fontSize="large" alignmentBaseline="middle" />
-                    </IconButton>
+                    <Link to={semanticallyOrderedPoems[this.getRightPoemIndex()]} className={classes.reactRouterLink}>
+                      <IconButton
+                        className={classes.appBarTitleElement}
+                        color="inherit" aria-label="Right"
+                        onMouseEnter={this.onEnterChevronRight}
+                        onMouseLeave={this.onLeaveChevronRight}
+                        onClick={this.advancePoemRight}
+                      >
+                        <ChevronRight style={{color: this.state.chevronColorRight}} fontSize="large" alignmentBaseline="middle" />
+                      </IconButton>
+                    </Link>
                   </Hidden>
                 </div>
                 <IconButton
@@ -282,24 +302,24 @@ class App extends Component {
             )} />
             <Hidden smUp>
               <AppBar className={classes.bottomNavBar}>
-                <IconButton
-                  className={classes.bottomNavBarElement}
-                  color="inherit" aria-label="Left"
-                  onMouseEnter={this.onEnterChevronLeft}
-                  onMouseLeave={this.onLeaveChevronLeft}
-                  onClick={this.advancePoemLeft}
-                >
-                  <ChevronLeft fontSize="large" alignmentBaseline="middle" />
-                </IconButton>
-                <IconButton
-                  className={classes.bottomNavBarElement}
-                  color="inherit" aria-label="Right"
-                  onMouseEnter={this.onEnterChevronRight}
-                  onMouseLeave={this.onLeaveChevronRight}
-                  onClick={this.advancePoemRight}
-                >
-                  <ChevronRight fontSize="large" alignmentBaseline="middle" />
-                </IconButton>
+                <div className={classes.bottomNavBarElement}>
+                  <Link to={semanticallyOrderedPoems[this.getLeftPoemIndex()]} className={classes.reactRouterLink}>
+                    <div className={classes.bottomNavBarArrow}>
+                      <IconButton color="inherit" aria-label="Left" onClick={this.advancePoemLeft}>
+                        <ChevronLeft fontSize="large" alignmentBaseline="middle" />
+                      </IconButton>
+                    </div>
+                  </Link>
+                </div>
+                <div className={classes.bottomNavBarElement}>
+                  <Link to={semanticallyOrderedPoems[this.getRightPoemIndex()]} className={classes.reactRouterLink}>
+                    <div className={classes.bottomNavBarArrow}>
+                       <IconButton color="inherit" aria-label="Right" onClick={this.advancePoemRight}>
+                        <ChevronRight fontSize="large" alignmentBaseline="middle" />
+                      </IconButton>
+                    </div>
+                  </Link>
+                </div>
               </AppBar>
               <div className={classes.appBar} />
             </Hidden>

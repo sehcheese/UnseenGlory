@@ -3,14 +3,6 @@ export default {
   subtitle: null,
   lines: [
     {
-      line: 'Winter Sun',
-      reference: null,
-    },
-    {
-      line: '',
-      reference: null,
-    },
-    {
       line: 'The shadows, long',
       reference: null,
     },
