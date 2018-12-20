@@ -44,11 +44,11 @@ export default {
     },
     {
       line: 'All treasures of wisdom',
-      reference: null,
+      reference: 'Colossians 2:3',
     },
     {
       line: 'in Me are hidden',
-      reference: null,
+      reference: 'Colossians 2:3',
     },
     {
       line: 'truth truly beheld',
@@ -64,11 +64,11 @@ export default {
     },
     {
       line: 'The foolish things',
-      reference: null,
+      reference: '1 Corinthians 1:27',
     },
     {
       line: 'now shame the wise',
-      reference: null,
+      reference: '1 Corinthians 1:27',
     },
     {
       line: 'open now',
@@ -84,11 +84,11 @@ export default {
     },
     {
       line: 'The mind of Christ',
-      reference: null,
+      reference: '1 Corinthians 2:11-16',
     },
     {
       line: 'reveals all things',
-      reference: null,
+      reference: '1 Corinthians 2:11-16',
     },
     {
       line: 'from truth it sprouts',
@@ -144,11 +144,11 @@ export default {
     },
     {
       line: 'Then we\'ll know',
-      reference: null,
+      reference: '1 Corinthians 13:12, 1 John 3:2',
     },
     {
       line: 'just as we\'re known',
-      reference: null,
+      reference: '1 Corinthians 13:12, 1 John 3:2',
     },
     {
       line: 'until then',
@@ -172,11 +172,11 @@ export default {
     },
     {
       line: 'know the truth',
-      reference: null,
+      reference: 'John 8:32',
     },
     {
       line: 'thus be set free',
-      reference: null,
+      reference: 'John 8:32',
     },
     {
       line: '',
@@ -192,11 +192,11 @@ export default {
     },
     {
       line: 'I am the Truth,',
-      reference: null,
+      reference: 'John 14:6',
     },
     {
       line: 'the Light, the Door',
-      reference: null,
+      reference: 'John 8:12, John 10:9',
     },
   ],
 };

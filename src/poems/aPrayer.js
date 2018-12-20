@@ -4,19 +4,19 @@ export default {
   lines: [
     {
       line: 'Write Thy will upon my heart',
-      reference: null,
+      reference: 'Psalm 119',
     },
     {
       line: 'Though from Thy precepts I depart',
-      reference: null,
+      reference: 'Psalm 119',
     },
     {
       line: 'Make Thy law a blissful chase',
-      reference: null,
+      reference: 'Philippians 3:14',
     },
     {
       line: 'Striving so to win the race',
-      reference: null,
+      reference: 'Philippians 3:14',
     },
     {
       line: 'Narrow make my vision now',
@@ -64,15 +64,15 @@ export default {
     },
     {
       line: 'The storm and waves, Thy word subsides',
-      reference: null,
+      reference: 'Matthew 8:23-27',
     },
     {
       line: 'From Thy hand the sparrow receives',
-      reference: null,
+      reference: 'Matthew 6:26',
     },
     {
       line: 'Bounteous gifts to fill its needs',
-      reference: null,
+      reference: 'Matthew 6:26',
     },
     {
       line: 'God of mercy, God of grace!',

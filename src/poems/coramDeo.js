@@ -3,16 +3,8 @@ export default {
   subtitle: null,
   lines: [
     {
-      line: 'Coram Deo',
-      reference: null,
-    },
-    {
-      line: '',
-      reference: null,
-    },
-    {
       line: 'Through a glass dimly we behold',
-      reference: null,
+      reference: '1 Corinthians 13:12',
     },
     {
       line: 'a God we claim to know',
@@ -60,11 +52,11 @@ export default {
     },
     {
       line: 'But if we stood before His face',
-      reference: null,
+      reference: 'C. S. Lewis, "Til We Have Faces"',
     },
     {
       line: 'all blasphemous speech would cease',
-      reference: null,
+      reference: 'C. S. Lewis, "Til We Have Faces"',
     },
     {
       line: '',
@@ -76,7 +68,7 @@ export default {
     },
     {
       line: 'from unclean lips shatter',
-      reference: null,
+      reference: 'Isaiah 6:5',
     },
     {
       line: '',
@@ -108,11 +100,11 @@ export default {
     },
     {
       line: 'And we shall see Him',
-      reference: null,
+      reference: '1 John 3:2',
     },
     {
       line: 'for Who He is',
-      reference: null,
+      reference: '1 John 3:2',
     },
   ],
 };

@@ -100,15 +100,15 @@ export default {
     },
     {
       line: 'Neither eye nor ear',
-      reference: null,
+      reference: '1 Corinthians 2:9',
     },
     {
       line: 'yet beholds what He hath wrought',
-      reference: null,
+      reference: '1 Corinthians 2:9',
     },
     {
       line: 'for those who love Him',
-      reference: null,
+      reference: '1 Corinthians 2:9',
     },
   ],
 };

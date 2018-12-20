@@ -48,7 +48,7 @@ export default {
     },
     {
       line: 'Save the still small voice',
-      reference: null,
+      reference: '1 Kings 19:11-13',
     },
     {
       line: 'closer than your breath',
@@ -60,15 +60,15 @@ export default {
     },
     {
       line: 'Death be not proud',
-      reference: null,
+      reference: 'John Donne, "Sonnet X"',
     },
     {
       line: 'swallowed in victory',
-      reference: null,
+      reference: '1 Corinthians 15:54',
     },
     {
       line: 'overcome with a Word',
-      reference: null,
+      reference: 'Martin Luther, "A Mighty Fortress Is Our God"',
     },
     {
       line: '',

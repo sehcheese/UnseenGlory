@@ -4,11 +4,11 @@ export default {
   lines: [
     {
       line: 'All your own',
-      reference: null,
+      reference: 'Jeremiah 2:13',
     },
     {
       line: 'cisterns broken',
-      reference: null,
+      reference: 'Jeremiah 2:13',
     },
     {
       line: 'hear the words',
@@ -24,19 +24,19 @@ export default {
     },
     {
       line: 'Without money',
-      reference: null,
+      reference: 'Isaiah 55:1-2',
     },
     {
       line: 'come and buy',
-      reference: null,
+      reference: 'Isaiah 55:1-2',
     },
     {
       line: 'what will truly',
-      reference: null,
+      reference: 'Isaiah 55:1-2',
     },
     {
       line: 'satisfy',
-      reference: null,
+      reference: 'Isaiah 55:1-2',
     },
     {
       line: '',
@@ -44,15 +44,15 @@ export default {
     },
     {
       line: 'Count the cost',
-      reference: null,
+      reference: 'Luke 14:26-33',
     },
     {
       line: 'and follow me',
-      reference: null,
+      reference: 'Luke 14:26-33',
     },
     {
       line: 'I am the word',
-      reference: null,
+      reference: 'John 1',
     },
     {
       line: 'that sets you free',
@@ -83,7 +83,7 @@ export default {
       reference: null,
     },
     {
-      line: '---',
+      line: '',
       reference: null,
     },
     {
@@ -104,7 +104,7 @@ export default {
     },
     {
       line: 'and wash my feet',
-      reference: null,
+      reference: 'John 13:1-17',
     },
     {
       line: '',
@@ -112,11 +112,11 @@ export default {
     },
     {
       line: 'Ring the bell',
-      reference: null,
+      reference: 'Abraham Heschel, "Prophetic Witness"',
     },
     {
       line: 'inside my heart',
-      reference: null,
+      reference: 'Abraham Heschel, "Prophetic Witness"',
     },
     {
       line: 'glorious truth',
@@ -152,22 +152,18 @@ export default {
     },
     {
       line: 'You both give',
-      reference: null,
+      reference: 'Job 1:21',
     },
     {
       line: 'and take away',
-      reference: null,
+      reference: 'Job 1:21',
     },
     {
       line: 'Your name I bless',
-      reference: null,
+      reference: 'Job 1:21',
     },
     {
       line: 'to endless days',
-      reference: null,
-    },
-    {
-      line: '',
       reference: null,
     },
     {
