@@ -77,6 +77,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: '"Bitter", serif',
+    useNextVariants: true,
   },
 });
 
@@ -90,7 +91,7 @@ class App extends Component {
     const seenFragmentColor = randomUnseenGloryColor(unFragmentColor);
     const gloryFragmentColor = unseenGloryColors.filter(color => color !== unFragmentColor && color !== seenFragmentColor)[0];
 
-    const activePoemIndex = window.document.location.pathname != ''
+    const activePoemIndex = window.document.location.pathname != '/'
       ? semanticallyOrderedPoems.indexOf(window.document.location.pathname.substring(1))
       : null;
 
