@@ -192,11 +192,11 @@ export default {
     },
     {
       line: 'the night, far gone',
-      reference: 'Romans 13:12',
+      reference: 'Romans 13:12, Niel Nielson',
     },
     {
       line: 'the day, at hand',
-      reference: 'Romans 13:12',
+      reference: 'Romans 13:12, Niel Nielson',
     },
   ],
 };
