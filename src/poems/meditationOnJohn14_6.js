@@ -4,7 +4,7 @@ export default {
   lines: [
     {
       line: 'Thine is the way everlasting',
-      reference: null,
+      reference: 'Psalm 139:24',
     },
     {
       line: 'In Thee is met all truth',
@@ -28,7 +28,7 @@ export default {
     },
     {
       line: 'Grant me life abundantly',
-      reference: null,
+      reference: 'John 10:10',
     },
     {
       line: '',
@@ -36,7 +36,7 @@ export default {
     },
     {
       line: 'Thy path is narrow, straight',
-      reference: null,
+      reference: 'Matthew 7:13-14',
     },
     {
       line: 'Eternal, unchanging Thy truth',
@@ -44,7 +44,7 @@ export default {
     },
     {
       line: 'Thy love is better than life',
-      reference: null,
+      reference: 'Psalm 63:3',
     },
     {
       line: '',
@@ -56,11 +56,11 @@ export default {
     },
     {
       line: 'My mind, the mind of Christ',
-      reference: null,
+      reference: '1 Corinthians 2:16',
     },
     {
       line: 'My life, Christ- Him crucified',
-      reference: null,
+      reference: '1 Corinthians 2:2',
     },
     {
       line: '',

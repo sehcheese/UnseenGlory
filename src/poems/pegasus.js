@@ -171,7 +171,7 @@ export default {
       reference: null,
     },
     {
-      line: 'a wing�d horse',
+      line: 'a wingéd horse',
       reference: null,
     },
     {

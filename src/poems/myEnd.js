@@ -4,7 +4,7 @@ export default {
   lines: [
     {
       line: 'If my end is in my beginning',
-      reference: null,
+      reference: 'T. S. Eliot, "Four Quartets"',
     },
     {
       line: 'I think I\'m beginning to understand',

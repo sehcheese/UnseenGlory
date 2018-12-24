@@ -48,7 +48,7 @@ export default {
     },
     {
       line: 'but perfect love casts out fear, and anyway, you',
-      reference: null,
+      reference: '1 John 4:18',
     },
     {
       line: 'are fiercely beautiful in body, spirit, and soul',

@@ -32,11 +32,11 @@ export default {
     },
     {
       line: 'set forth. Teach me to number',
-      reference: null,
+      reference: 'Psalm 90:12',
     },
     {
       line: 'my days, each one is precious.',
-      reference: null,
+      reference: 'Psalm 90:12',
     },
     {
       line: '',
@@ -72,7 +72,7 @@ export default {
     },
     {
       line: 'Yet I must wager, I',
-      reference: null,
+      reference: 'Blaise Pascal',
     },
     {
       line: 'must step into the vast unknown.',

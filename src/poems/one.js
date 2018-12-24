@@ -44,19 +44,19 @@ export default {
     },
     {
       line: 'How truly You know me, You see me',
-      reference: null,
+      reference: 'Relient K, "I Am Understood?"',
     },
     {
       line: 'You hear my words before I speak',
-      reference: null,
+      reference: 'Relient K, "I Am Understood?"',
     },
     {
       line: 'You are the only One who knows fully',
-      reference: null,
+      reference: 'Relient K, "I Am Understood?"',
     },
     {
       line: 'my thoughts and the depths of my soul',
-      reference: null,
+      reference: 'Relient K, "I Am Understood?"',
     },
     {
       line: '',
@@ -64,11 +64,11 @@ export default {
     },
     {
       line: 'Therefore I am still, silent before You',
-      reference: null,
+      reference: 'Ecclesiastes 5:2',
     },
     {
       line: 'utterly undone and without pretense',
-      reference: null,
+      reference: 'Isaiah 6:5',
     },
     {
       line: 'for nothing is hidden from Your presence',
@@ -76,7 +76,7 @@ export default {
     },
     {
       line: 'You know me as I am, not as I will to be',
-      reference: null,
+      reference: 'Relient K, "I Am Understood?"',
     },
     {
       line: '',
@@ -132,11 +132,11 @@ export default {
     },
     {
       line: 'whatever may seem, You are never silent',
-      reference: null,
+      reference: 'C. S. Lewis, "Til We Have Faces"',
     },
     {
       line: 'for You Yourself are the answer',
-      reference: null,
+      reference: 'C. S. Lewis, "Til We Have Faces"',
     },
     {
       line: '',
@@ -144,11 +144,11 @@ export default {
     },
     {
       line: 'In You I am complete and lack nothing',
-      reference: null,
+      reference: 'Psalm 23:1',
     },
     {
       line: 'there is no life apart from You',
-      reference: null,
+      reference: 'John 15',
     },
     {
       line: 'You are my life, my breath, my peace',
@@ -156,7 +156,7 @@ export default {
     },
     {
       line: 'for You and I are one',
-      reference: null,
+      reference: 'John 15, 1 Corinthians 6:15-17',
     },
   ],
 };

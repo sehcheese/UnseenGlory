@@ -4,7 +4,7 @@ export default {
   lines: [
     {
       line: '​Kapooya, kapooya!',
-      reference: null,
+      reference: 'Michelle Clark, YouTube interview',
     },
     {
       line: '(the little bird said)',
@@ -92,7 +92,7 @@ export default {
     },
     {
       line: 'light and heavy',
-      reference: null,
+      reference: 'Switchfoot',
     },
     {
       line: 'soaring to tomorrow',
@@ -104,7 +104,7 @@ export default {
     },
     {
       line: 'Peace is not comfort',
-      reference: null,
+      reference: 'Jamie Trollinger',
     },
     {
       line: 'but this bird\'s-eye view',
@@ -136,14 +136,6 @@ export default {
     },
     {
       line: 'and true peace find',
-      reference: null,
-    },
-    {
-      line: '',
-      reference: null,
-    },
-    {
-      line: '',
       reference: null,
     },
   ],

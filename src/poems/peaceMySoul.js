@@ -20,11 +20,11 @@ export default {
     },
     {
       line: 'The mountains thrown',
-      reference: null,
+      reference: 'Matthew 21:21',
     },
     {
       line: 'Into the heart of the sea',
-      reference: null,
+      reference: 'Matthew 21:21',
     },
     {
       line: 'Peace, my soul.',
@@ -100,11 +100,11 @@ export default {
     },
     {
       line: 'Men cry "Peace, peace"',
-      reference: null,
+      reference: 'Jeremiah 6:14',
     },
     {
       line: 'But there is no peace',
-      reference: null,
+      reference: 'Jeremiah 6:14',
     },
     {
       line: 'Peace, my soul.',

@@ -32,7 +32,7 @@ export default {
     },
     {
       line: 'Nothing new under the sun',
-      reference: null,
+      reference: 'Ecclesiastes 1:9',
     },
     {
       line: 'we must engage what has been done',
@@ -44,7 +44,7 @@ export default {
     },
     {
       line: 'But I am art born anew',
-      reference: null,
+      reference: 'Athentikos "I am art" project',
     },
     {
       line: 'seeking, striving, for what\'s true',
@@ -116,7 +116,7 @@ export default {
     },
     {
       line: 'the Way, the Truth, the Life, the Gate',
-      reference: null,
+      reference: 'John 14:6, John 10:9',
     },
     {
       line: '',
@@ -128,7 +128,7 @@ export default {
     },
     {
       line: 'I, your image, these songs now raise',
-      reference: null,
+      reference: 'Genesis 1:27',
     },
     {
       line: 'That those with eyes may now see',

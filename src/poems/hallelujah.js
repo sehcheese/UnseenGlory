@@ -4,11 +4,11 @@ export default {
   lines: [
     {
       line: 'You are the spring',
-      reference: null,
+      reference: 'Søren Kierkegaard, "The Changelessness of God"',
     },
     {
       line: 'which seeks the thirsty',
-      reference: null,
+      reference: 'Søren Kierkegaard, "The Changelessness of God"',
     },
     {
       line: 'And Lord, You know',
@@ -32,11 +32,11 @@ export default {
     },
     {
       line: 'And You say blessed',
-      reference: null,
+      reference: 'Matthew 5:3',
     },
     {
       line: 'are the poor in spirit',
-      reference: null,
+      reference: 'Matthew 5:3',
     },
     {
       line: '',
@@ -44,19 +44,19 @@ export default {
     },
     {
       line: 'You endured the cross',
-      reference: null,
+      reference: 'Hebrews 12:2',
     },
     {
       line: 'for the joy set before',
-      reference: null,
+      reference: 'Hebrews 12:2',
     },
     {
       line: 'And Lord, we are sorrowful',
-      reference: null,
+      reference: '2 Corinthians 6:10',
     },
     {
       line: 'yet always rejoicing',
-      reference: null,
+      reference: '2 Corinthians 6:10',
     },
     {
       line: '',
@@ -76,7 +76,7 @@ export default {
     },
     {
       line: 'objective hallelujah',
-      reference: null,
+      reference: 'Aaron Thaete',
     },
   ],
 };

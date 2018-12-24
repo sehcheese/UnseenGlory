@@ -16,7 +16,7 @@ export default {
     },
     {
       line: 'To my wounds only your wounds can speak;',
-      reference: null,
+      reference: ' Edward Shillito, "Jesus of the Scars"',
     },
     {
       line: 'Your crown of thorns is my crown of blessing',
@@ -28,11 +28,11 @@ export default {
     },
     {
       line: 'You whose thoughts are above my thoughts:',
-      reference: null,
+      reference: 'Isaiah 55:8-9',
     },
     {
       line: 'I submit to you, only help me to submit to you',
-      reference: null,
+      reference: 'Mark 9:24',
     },
     {
       line: '',
@@ -40,11 +40,11 @@ export default {
     },
     {
       line: 'Trade my carnal mind for the mind of Christ,',
-      reference: null,
+      reference: 'Romans 8:6',
     },
     {
       line: 'My heart of stone for a heart of flesh',
-      reference: null,
+      reference: 'Ezekiel 36:26',
     },
     {
       line: '',
@@ -68,11 +68,7 @@ export default {
     },
     {
       line: 'I ask great things of a great God',
-      reference: null,
-    },
-    {
-      line: '',
-      reference: null,
+      reference: '"The Valley of Vision": "The Great God"',
     },
   ],
 };

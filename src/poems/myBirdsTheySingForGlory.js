@@ -92,11 +92,11 @@ export default {
     },
     {
       line: 'fear the Lord, then wisdom know',
-      reference: null,
+      reference: 'Proverbs 1:7',
     },
     {
       line: 'knowing Him, understanding grows',
-      reference: null,
+      reference: 'Proverbs 1:7',
     },
     {
       line: '',

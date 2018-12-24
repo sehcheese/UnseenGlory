@@ -72,11 +72,11 @@ export default {
     },
     {
       line: 'on Christ the Author',
-      reference: null,
+      reference: 'Hebrews 12:2',
     },
     {
       line: 'fix my eyes',
-      reference: null,
+      reference: 'Hebrews 12:2',
     },
     {
       line: '',
@@ -84,15 +84,15 @@ export default {
     },
     {
       line: 'Who for joy',
-      reference: null,
+      reference: 'Hebrews 12:2',
     },
     {
       line: 'endured the cross',
-      reference: null,
+      reference: 'Hebrews 12:2',
     },
     {
       line: 'bore its shame',
-      reference: null,
+      reference: 'Hebrews 12:2',
     },
     {
       line: 'and owned the loss',
@@ -104,7 +104,7 @@ export default {
     },
     {
       line: 'count the cost',
-      reference: null,
+      reference: 'Luke 14:26-33',
     },
     {
       line: '',
@@ -152,11 +152,11 @@ export default {
     },
     {
       line: 'Your kingdom come',
-      reference: null,
+      reference: 'Matthew 6:10',
     },
     {
       line: 'Your will be done',
-      reference: null,
+      reference: 'Matthew 6:10',
     },
     {
       line: 'Yours the glory',

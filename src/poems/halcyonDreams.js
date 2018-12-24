@@ -4,7 +4,7 @@ export default {
   lines: [
     {
       line: 'This is not a pipe; does it look like one?',
-      reference: null,
+      reference: 'René Magritte',
     },
     {
       line: 'just another lifeless abstraction',
@@ -12,7 +12,7 @@ export default {
     },
     {
       line: 'oh that peace would enter the cave',
-      reference: null,
+      reference: 'Plato',
     },
     {
       line: 'and cease to be a pipe dream',
@@ -24,7 +24,7 @@ export default {
     },
     {
       line: 'Seek peace and pursue it',
-      reference: null,
+      reference: 'Psalm 34:14',
     },
     {
       line: 'I\'m still chasing this halcyon dream',
@@ -32,11 +32,11 @@ export default {
     },
     {
       line: 'but there\'s no wind on this water',
-      reference: null,
+      reference: 'Samuel Taylor Coleridge, "The Rime of the Ancient Mariner"',
     },
     {
       line: 'and overhead an albatross circles',
-      reference: null,
+      reference: 'Samuel Taylor Coleridge, "The Rime of the Ancient Mariner"',
     },
     {
       line: '',
@@ -48,11 +48,11 @@ export default {
     },
     {
       line: 'and there is none other, exalted',
-      reference: null,
+      reference: 'Psalm 46:10',
     },
     {
       line: 'in all the earth, but still',
-      reference: null,
+      reference: 'Psalm 46:10',
     },
     {
       line: 'my peace passes',
@@ -64,7 +64,7 @@ export default {
     },
     {
       line: 'Only Your peace passes understanding',
-      reference: null,
+      reference: 'Philippians 4:7',
     },
     {
       line: 'put it in my pipe and I\'ll smoke it',
@@ -72,11 +72,11 @@ export default {
     },
     {
       line: 'take each piece of my troubled heart',
-      reference: null,
+      reference: 'Francois Fenelon',
     },
     {
       line: 'for I know not how to give',
-      reference: null,
+      reference: 'Francois Fenelon',
     },
   ],
 };

@@ -12,7 +12,7 @@ export default {
     },
     {
       line: 'A word, yes, but a Word whose most fitting definition was Incarnation',
-      reference: null,
+      reference: 'John 1',
     },
     {
       line: 'A Person, a Life, no mere abstraction',

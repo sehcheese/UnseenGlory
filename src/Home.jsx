@@ -46,7 +46,7 @@ class Home extends Component {
         <Typography className={classes.homeContent}>
           Referring to Christ, Kierkegaard said, "the glory must be believed." So it is too for his followers, who share in his suffering, comfort, and glory. Ours too is the lowliness of the manger and the cross - a life dense with unseen glory. It must be believed not because it does not exist, but because often it is hard to see, to reconcile with our circumstances.<br /><br />
           Today, Christmas Eve 2018, I am releasing publicly poetry from the last three years to the Unseen Glory collection. I'd be honored if you checked it out, and am always glad to talk about it. The site now has a toggle to reveal references to influencing sources. Thank you, friends, for helping me to believe and see the glory.<br /><br />
-          Lord, rent our veil and show us Your glory.
+          Lord, show us Your glory.
         </Typography>
         <Divider />
         <Typography className={classes.homeContent}>

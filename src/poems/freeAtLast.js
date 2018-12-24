@@ -96,7 +96,7 @@ export default {
     },
     {
       line: 'Until free at last',
-      reference: null,
+      reference: 'Martin Luther King, Jr.',
     },
     {
       line: 'from death we rise',

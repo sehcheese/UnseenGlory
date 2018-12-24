@@ -108,11 +108,11 @@ export default {
     },
     {
       line: 'clear the scales',
-      reference: null,
+      reference: 'Acts 9:18',
     },
     {
       line: 'from our eyes!',
-      reference: null,
+      reference: 'Acts 9:18',
     },
     {
       line: 'that we might see You',
@@ -136,10 +136,6 @@ export default {
     },
     {
       line: 'glory resounding to eternity',
-      reference: null,
-    },
-    {
-      line: '',
       reference: null,
     },
   ],
