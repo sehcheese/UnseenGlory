@@ -43,8 +43,10 @@ class Poem extends Component {
       }
 
       if (showReferences && lineInfo.reference !== null) {
-        if (index > 0 && lineInfo.reference !== activePoem.lines[index - 1].reference) {
-          referenceIndex++;
+        if (index > 0) {
+          let previousLineIndex = index - 1;
+          while (previousLineIndex > 0 && activePoem.lines[previousLineIndex].line === '') previousLineIndex--;
+          if (lineInfo.reference !== activePoem.lines[previousLineIndex].reference) referenceIndex++;
         }
         
         const color = unseenGloryColors[referenceIndex % unseenGloryColors.length];
