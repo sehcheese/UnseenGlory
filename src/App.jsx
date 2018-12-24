@@ -14,13 +14,15 @@ import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
 import BookIcon from '@material-ui/icons/Book';
 import Hidden from '@material-ui/core/Hidden';
-import Fade from '@material-ui/core/Fade';
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Home from './Home';
 import Poem from './Poem';
 
 import { poems, alphabeticallyOrderedPoems, semanticallyOrderedPoems } from './poems';
 import { unseenGloryColors, randomUnseenGloryColor } from './unseenGloryColors';
 import ScrollToTop from './ScrollToTop';
+
+const transitionDuration = 800;
 
 const styles = (theme) => ({
   root: {
@@ -65,9 +67,27 @@ const styles = (theme) => ({
   reactRouterLink: {
     textDecoration: 'none',
   },
+  fadeEnter: {
+    opacity: 0,
+  },
+  fadeEnterActive: {
+    opacity: 1,
+    transition: `opacity ${transitionDuration}ms ease-in`,
+  },
+  fadeEnterDone: {
+    opacity: 1,
+  },
+  fadeExit: {
+    opacity: 1,
+  },
+  fadeExitActive: {
+    opacity: 0,
+    transition: `opacity 0ms ease-in`,
+  },
+  fadeExitDone: {
+    opacity: 0,
+  },
 });
-
-const timeout = 500;
 
 const theme = createMuiTheme({
   palette: {
@@ -85,8 +105,8 @@ const theme = createMuiTheme({
 const white = '#FFF';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     const unFragmentColor = randomUnseenGloryColor();
     const seenFragmentColor = randomUnseenGloryColor(unFragmentColor);
@@ -107,7 +127,16 @@ class App extends Component {
       showReferences: false,
       drawerOpen: false,
       elementIn: true, // Used for transitions
-    }
+    };
+
+    this.cssTransitionClassNames = {
+      enter: props.classes.fadeEnter,
+      enterActive: props.classes.fadeEnterActive,
+      enterDone: props.classes.fadeEnterDone,
+      exit: props.classes.fadeExit,
+      exitActive: props.classes.fadeExitActive,
+      exitDone: props.classes.fadeExitDone,
+    };
   }
 
   toggleDrawer = () => {
@@ -302,11 +331,19 @@ class App extends Component {
                   </IconButton>
                 </Toolbar>
               </AppBar>
-              <div className={classes.appBar} />
-              <Route exact path="/" component={Home} />
-              <Route path="/:poemKey" render={({ match }) => (
-                  <Poem activePoem={poems[match.params.poemKey]} showReferences={this.state.showReferences} />
-              )} />
+              <div className={classes.appBar} />              
+                <Route exact path="/" component={Home} />
+                <Route path="/:poemKey" render={({ location, match }) => (
+                  <TransitionGroup>
+                    <CSSTransition
+                      key={location.key}
+                      classNames={this.cssTransitionClassNames}
+                      timeout={transitionDuration}
+                    >
+                      <Poem activePoem={poems[match.params.poemKey]} showReferences={this.state.showReferences} />
+                    </CSSTransition>
+                  </TransitionGroup>
+                )} />
               <Hidden smUp>
                 <AppBar className={classes.bottomNavBar}>
                   <div className={classes.bottomNavBarElement}>
