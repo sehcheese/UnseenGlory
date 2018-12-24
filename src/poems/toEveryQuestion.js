@@ -8,7 +8,7 @@ export default {
     },
     {
       line: 'You, You Yourself are the answer',
-      reference: null,
+      reference: 'C. S. Lewis, "Til We Have Faces"',
     },
     {
       line: '',
@@ -52,11 +52,11 @@ export default {
     },
     {
       line: 'To every need, every earnest beggar',
-      reference: null,
+      reference: 'Søren Kierkegaard, "The Changelessness of God"',
     },
     {
       line: 'You give Yourself, the greatest gift',
-      reference: null,
+      reference: 'Søren Kierkegaard, "The Changelessness of God"',
     },
   ],
 };

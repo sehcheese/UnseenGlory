@@ -8,7 +8,7 @@ export default {
     },
     {
       line: 'counting the cost',
-      reference: null,
+      reference: 'Luke 14:26-33',
     },
     {
       line: 'this grief to bear',
@@ -44,19 +44,19 @@ export default {
     },
     {
       line: 'With aching breath',
-      reference: null,
+      reference: 'Matt Papa, "I Will Trust In You My God (Hymn in A)"',
     },
     {
       line: 'to even death',
-      reference: null,
+      reference: 'Matt Papa, "I Will Trust In You My God (Hymn in A)"',
     },
     {
       line: '"Your will, not mine"',
-      reference: null,
+      reference: 'Luke 22:42',
     },
     {
       line: 'Christ, the paradigm',
-      reference: null,
+      reference: 'Søren Kierkegaard',
     },
   ],
 };

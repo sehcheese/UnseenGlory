@@ -44,11 +44,11 @@ export default {
     },
     {
       line: 'Our life is no dream',
-      reference: null,
+      reference: 'Novalis',
     },
     {
       line: 'But perhaps it should become one',
-      reference: null,
+      reference: 'Novalis',
     },
     {
       line: 'Things aren\'t always as they seem',
@@ -56,7 +56,7 @@ export default {
     },
     {
       line: 'Nor like they will become',
-      reference: null,
+      reference: '1 Corinthians 15:35-49, 1 John 3:2',
     },
     {
       line: '',
@@ -64,11 +64,11 @@ export default {
     },
     {
       line: 'Even now, with unveiled faces',
-      reference: null,
+      reference: '2 Corinthians 3:18',
     },
     {
       line: 'We glimpse this abundant glory',
-      reference: null,
+      reference: '2 Corinthians 3:18',
     },
     {
       line: 'This world is full of traces',

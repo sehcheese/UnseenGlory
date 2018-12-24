@@ -28,7 +28,7 @@ export default {
     },
     {
       line: 'I am a shell and not a man',
-      reference: null,
+      reference: 'Psalm 22:6',
     },
     {
       line: 'broken and bruised by His plan',
@@ -52,7 +52,7 @@ export default {
     },
     {
       line: 'As it was His, so comfort too',
-      reference: null,
+      reference: '2 Corinthians 1:5',
     },
     {
       line: 'from His Spirit our hearts renews',
@@ -64,7 +64,7 @@ export default {
     },
     {
       line: 'Though you stumble, you will not fall',
-      reference: null,
+      reference: 'Psalm 37:24',
     },
     {
       line: 'the Lord will hear your every call',
@@ -88,11 +88,11 @@ export default {
     },
     {
       line: 'He is making all things new',
-      reference: null,
+      reference: 'Revelation 21:5',
     },
     {
       line: 'all that\'s sad will come untrue',
-      reference: null,
+      reference: 'J. R. R. Tolkien, Lord of the Rings',
     },
     {
       line: '',
@@ -100,11 +100,11 @@ export default {
     },
     {
       line: 'In the morning joy you\'ll know',
-      reference: null,
+      reference: 'Psalm 30:5',
     },
     {
       line: 'your cup will surely overflow',
-      reference: null,
+      reference: 'Psalm 23:5',
     },
     {
       line: '',
@@ -112,11 +112,11 @@ export default {
     },
     {
       line: 'Cast on Him all your cares',
-      reference: null,
+      reference: '1 Peter 5:7',
     },
     {
       line: 'the Lord our burdens daily bears',
-      reference: null,
+      reference: 'Psalm 68:19',
     },
   ],
 };

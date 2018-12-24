@@ -148,7 +148,7 @@ export default {
     },
     {
       line: 'A mountain of faith',
-      reference: null,
+      reference: 'Matthew 21:21',
     },
     {
       line: 'Swells from my soul',
@@ -156,7 +156,7 @@ export default {
     },
     {
       line: 'And every gift is good',
-      reference: null,
+      reference: 'James 1:17',
     },
     {
       line: 'My unbelief, purged',
@@ -164,7 +164,7 @@ export default {
     },
     {
       line: 'My eyes on You',
-      reference: null,
+      reference: 'Hebrews 12:2',
     },
   ],
 };

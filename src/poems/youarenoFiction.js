@@ -8,15 +8,15 @@ export default {
     },
     {
       line: 'no, we are your story, prevailed by your thought',
-      reference: null,
+      reference: 'Abraham Heschel, "Man is not Alone: A Philosophy of Religion"',
     },
     {
       line: 'You are all at once obvious and subtle',
-      reference: null,
+      reference: 'Søren Kierkegaard, "Four Upbuilding Discourses"',
     },
     {
       line: 'so that all that remains is faith',
-      reference: null,
+      reference: 'Søren Kierkegaard, "Four Upbuilding Discourses"',
     },
     {
       line: '',
@@ -24,19 +24,19 @@ export default {
     },
     {
       line: 'In your wisdom, You are too far for us to see',
-      reference: null,
+      reference: 'Søren Kierkegaard, "Four Upbuilding Discourses"',
     },
     {
       line: 'In your omnipresence, too close',
-      reference: null,
+      reference: 'Søren Kierkegaard, "Four Upbuilding Discourses"',
     },
     {
       line: 'In your goodness You conceal Yourself, and',
-      reference: null,
+      reference: 'Søren Kierkegaard, "Four Upbuilding Discourses"',
     },
     {
       line: 'Your power makes it impossible to see You',
-      reference: null,
+      reference: 'Søren Kierkegaard, "Four Upbuilding Discourses"',
     },
     {
       line: '',
@@ -44,15 +44,15 @@ export default {
     },
     {
       line: 'We are capable of nothing, but You of everything',
-      reference: null,
+      reference: 'Søren Kierkegaard, "Four Upbuilding Discourses"',
     },
     {
       line: 'You are in heaven and we are on earth',
-      reference: null,
+      reference: 'Søren Kierkegaard, "Four Upbuilding Discourses"',
     },
     {
       line: 'to know our need of You is our highest perfection',
-      reference: null,
+      reference: 'Søren Kierkegaard, "Four Upbuilding Discourses"',
     },
     {
       line: 'because all that is perfect meets in You',
@@ -72,7 +72,7 @@ export default {
     },
     {
       line: 'May You be in our thoughts as we are in Yours',
-      reference: null,
+      reference: 'Abraham Heschel, "Man is not Alone: A Philosophy of Religion"',
     },
     {
       line: 'That we might have faith to be Your fiction',

@@ -4,19 +4,19 @@ export default {
   lines: [
     {
       line: 'Hope is the last thing to',
-      reference: null,
+      reference: 'Japanese proverb',
     },
     {
       line: 'die',
-      reference: null,
+      reference: 'Japanese proverb',
     },
     {
       line: 'The final enemy is',
-      reference: null,
+      reference: '1 Corinthians 15:26',
     },
     {
       line: 'death',
-      reference: null,
+      reference: '1 Corinthians 15:26',
     },
     {
       line: 'Hope is realized in death\'s',
@@ -32,15 +32,15 @@ export default {
     },
     {
       line: 'hope',
-      reference: null,
+      reference: 'Romans 8:24',
     },
     {
       line: 'in what is seen is no',
-      reference: null,
+      reference: 'Romans 8:24',
     },
     {
       line: 'hope',
-      reference: null,
+      reference: 'Romans 8:24',
     },
     {
       line: 'at all; this dead body\'s life is',

@@ -92,11 +92,11 @@ export default {
     },
     {
       line: 'look not upon',
-      reference: null,
+      reference: 'Robert Murray M\'Cheyne',
     },
     {
       line: 'yourself too long',
-      reference: null,
+      reference: 'Robert Murray M\'Cheyne',
     },
     {
       line: '',
@@ -104,7 +104,7 @@ export default {
     },
     {
       line: 'But gaze at Him',
-      reference: null,
+      reference: 'Robert Murray M\'Cheyne',
     },
     {
       line: 'who knew no sin',
@@ -112,7 +112,7 @@ export default {
     },
     {
       line: 'humble yourself',
-      reference: null,
+      reference: '1 Peter 5:6',
     },
     {
       line: 'and enter in',
@@ -124,11 +124,11 @@ export default {
     },
     {
       line: 'The prodigal',
-      reference: null,
+      reference: 'Luke 15:11-32',
     },
     {
       line: 'is now a son',
-      reference: null,
+      reference: 'Luke 15:11-32',
     },
     {
       line: 'the battle is',
@@ -152,7 +152,7 @@ export default {
     },
     {
       line: 'shun not His grace',
-      reference: null,
+      reference: 'Galatians 2:21',
     },
     {
       line: 'your essence claim',
@@ -184,19 +184,19 @@ export default {
     },
     {
       line: 'In Christ, the Son',
-      reference: null,
+      reference: 'Romans 8:1',
     },
     {
       line: 'we fearless stand',
-      reference: null,
+      reference: 'Romans 8:1',
     },
     {
       line: 'the night, far gone',
-      reference: null,
+      reference: 'Romans 13:12',
     },
     {
       line: 'the day, at hand',
-      reference: null,
+      reference: 'Romans 13:12',
     },
   ],
 };

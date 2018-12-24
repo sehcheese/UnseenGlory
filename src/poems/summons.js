@@ -36,15 +36,15 @@ export default {
     },
     {
       line: 'And if to exist',
-      reference: null,
+      reference: 'Abraham Heschel, "Man is not Alone: A Philosophy of Religion"',
     },
     {
       line: 'is to be thought of by You,',
-      reference: null,
+      reference: 'Abraham Heschel, "Man is not Alone: A Philosophy of Religion"',
     },
     {
       line: 'and to think again Your thoughts',
-      reference: null,
+      reference: 'Abraham Heschel, "Man is not Alone: A Philosophy of Religion"',
     },
     {
       line: '',
@@ -52,15 +52,15 @@ export default {
     },
     {
       line: 'How vast their sum!',
-      reference: null,
+      reference: 'Psalm 139:17',
     },
     {
       line: 'how unsearchable Your judgments',
-      reference: null,
+      reference: 'Romans 11:33',
     },
     {
       line: 'Your ways past finding out!',
-      reference: null,
+      reference: 'Romans 11:33',
     },
     {
       line: '',
@@ -116,15 +116,15 @@ export default {
     },
     {
       line: 'Purify now, my purpose',
-      reference: null,
+      reference: '2 Samuel 7:18-29',
     },
     {
       line: 'act according to Your promises',
-      reference: null,
+      reference: '2 Samuel 7:18-29',
     },
     {
       line: 'and accept my thanksgiving',
-      reference: null,
+      reference: '2 Samuel 7:18-29',
     },
   ],
 };

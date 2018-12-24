@@ -76,7 +76,7 @@ export default {
     },
     {
       line: 'but I will soar',
-      reference: null,
+      reference: 'Isaiah 40:31',
     },
     {
       line: '',
@@ -88,7 +88,7 @@ export default {
     },
     {
       line: 'an eagle\'s wings',
-      reference: null,
+      reference: 'Isaiah 40:31',
     },
     {
       line: 'my travels done',
@@ -124,19 +124,19 @@ export default {
     },
     {
       line: '"From first to last',
-      reference: null,
+      reference: 'Jeremiah 1:5',
     },
     {
       line: 'your steps I knew',
-      reference: null,
+      reference: '"Footprints"',
     },
     {
       line: 'each day that passed',
-      reference: null,
+      reference: '"Footprints"',
     },
     {
       line: 'I walked with you',
-      reference: null,
+      reference: '"Footprints"',
     },
     {
       line: '',
@@ -144,19 +144,19 @@ export default {
     },
     {
       line: 'Your burden, mine-',
-      reference: null,
+      reference: 'Matthew 11:28-30',
     },
     {
       line: 'for mine is light',
-      reference: null,
+      reference: 'Matthew 11:28-30',
     },
     {
       line: 'insist not on',
-      reference: null,
+      reference: 'Matthew 11:28-30',
     },
     {
       line: 'walk not by sight',
-      reference: null,
+      reference: '2 Corinthians 5:7',
     },
     {
       line: '',

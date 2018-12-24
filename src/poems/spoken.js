@@ -108,15 +108,15 @@ export default {
     },
     {
       line: 'And no one will',
-      reference: null,
+      reference: 'John 16:22',
     },
     {
       line: 'take away my',
-      reference: null,
+      reference: 'John 16:22',
     },
     {
       line: 'joy',
-      reference: null,
+      reference: 'John 16:22',
     },
   ],
 };

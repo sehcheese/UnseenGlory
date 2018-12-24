@@ -108,7 +108,7 @@ export default {
     },
     {
       line: 'is a grasping at shadows',
-      reference: null,
+      reference: 'Tenth Avenue North, "Shadows"',
     },
     {
       line: '',
@@ -132,11 +132,11 @@ export default {
     },
     {
       line: 'What is man',
-      reference: null,
+      reference: 'Psalm 8:4',
     },
     {
       line: 'that You are mindful of him',
-      reference: null,
+      reference: 'Psalm 8:4',
     },
     {
       line: '',
@@ -172,11 +172,11 @@ export default {
     },
     {
       line: 'All is well',
-      reference: null,
+      reference: 'Julian of Norwich',
     },
     {
       line: 'and all shall be well',
-      reference: null,
+      reference: 'Julian of Norwich',
     },
     {
       line: 'Some moments',

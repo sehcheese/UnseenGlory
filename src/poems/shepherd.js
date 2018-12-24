@@ -16,11 +16,11 @@ export default {
     },
     {
       line: '"I am with you," behind and before',
-      reference: null,
+      reference: 'Matthew 28:20',
     },
     {
       line: 'your coming and going, now and evermore',
-      reference: null,
+      reference: 'Psalm 121:8',
     },
     {
       line: '',
@@ -28,23 +28,23 @@ export default {
     },
     {
       line: 'Lord, I want to bear much fruit',
-      reference: null,
+      reference: 'John 15:1-4, 8',
     },
     {
       line: 'You have pruned, now feed the shoot',
-      reference: null,
+      reference: 'John 15:1-4, 8',
     },
     {
       line: '',
       reference: null,
     },
     {
-      line: 'Of my faith, that simple seed',
-      reference: null,
+      line: 'Of my faith, that mustard seed',
+      reference: 'Matthew 17:20',
     },
     {
       line: 'for I am poor and full of need',
-      reference: null,
+      reference: 'Psalm 86:1',
     },
     {
       line: '',
@@ -52,11 +52,11 @@ export default {
     },
     {
       line: '"It will be so," abide in me',
-      reference: null,
+      reference: 'John 15:5',
     },
     {
       line: 'you the branch and I the tree',
-      reference: null,
+      reference: 'John 15:5',
     },
     {
       line: '',
@@ -64,11 +64,11 @@ export default {
     },
     {
       line: 'Taking up my cross, I leave the world behind',
-      reference: null,
+      reference: 'Luke 14:27',
     },
     {
       line: 'All cannot be lost with more of You to find:',
-      reference: null,
+      reference: 'Matt Van Swol',
     },
     {
       line: '',
@@ -76,11 +76,11 @@ export default {
     },
     {
       line: 'More beauty than the world can know',
-      reference: null,
+      reference: 'Josh Garrels, "Farther Along"',
     },
     {
       line: 'the glory of Him who shepherds my soul',
-      reference: null,
+      reference: 'Isaiah 40:11, John 10:11-18, Meg Sparks',
     },
   ],
 };

@@ -28,7 +28,7 @@ export default {
     },
     {
       line: 'a bird, old, tattered and frail',
-      reference: null,
+      reference: 'Dan Forrest, "Lord of the Small"',
     },
     {
       line: 'perches, and staggers',
@@ -104,7 +104,7 @@ export default {
     },
     {
       line: 'How creation doth groan',
-      reference: null,
+      reference: 'Romans 8:22',
     },
     {
       line: 'but praises Him best',
@@ -132,11 +132,11 @@ export default {
     },
     {
       line: 'to the One Whose eye',
-      reference: null,
+      reference: 'Matthew 6:25-34',
     },
     {
       line: 'will never leave me',
-      reference: null,
+      reference: 'Matthew 6:25-34',
     },
     {
       line: '',

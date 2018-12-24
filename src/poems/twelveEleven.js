@@ -92,7 +92,7 @@ export default {
     },
     {
       line: 'a simple sparrow',
-      reference: null,
+      reference: 'Matthew 6:26',
     },
     {
       line: '',
@@ -104,7 +104,7 @@ export default {
     },
     {
       line: 'and still in Your presence',
-      reference: null,
+      reference: 'Psalm 46:10',
     },
     {
       line: 'all is joy',
@@ -119,7 +119,7 @@ export default {
       reference: null,
     },
     {
-      line: 'Bring me, a child ',
+      line: 'Bring me, a child',
       reference: null,
     },
     {
@@ -132,15 +132,15 @@ export default {
     },
     {
       line: 'Search me, know my heart',
-      reference: null,
+      reference: 'Psalm 139:23-24',
     },
     {
       line: 'cleanse and fill me',
-      reference: null,
+      reference: 'Psalm 51:10',
     },
     {
       line: 'lead me in the way everlasting',
-      reference: null,
+      reference: 'Psalm 139:23-24',
     },
   ],
 };

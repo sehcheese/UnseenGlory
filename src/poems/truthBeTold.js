@@ -72,11 +72,11 @@ export default {
     },
     {
       line: 'You\'re the only desire',
-      reference: null,
+      reference: 'Marshall Fuller',
     },
     {
       line: 'I ever truly had',
-      reference: null,
+      reference: 'Marshall Fuller',
     },
   ],
 };

@@ -76,11 +76,11 @@ export default {
     },
     {
       line: 'That your heart might also be a fount',
-      reference: null,
+      reference: 'John 7:37-38',
     },
     {
       line: 'flowing with a love free and pure',
-      reference: null,
+      reference: 'John 7:37-38',
     },
     {
       line: '',
@@ -88,7 +88,7 @@ export default {
     },
     {
       line: 'For we cannot love unless we are loved first',
-      reference: null,
+      reference: '1 John 4:19',
     },
     {
       line: 'And my love is but a meager offering',
@@ -104,7 +104,7 @@ export default {
     },
     {
       line: 'And now flows from within me',
-      reference: null,
+      reference: 'John 7:37-38',
     },
     {
       line: '',
@@ -148,7 +148,7 @@ export default {
     },
     {
       line: 'Love is not a stagnant pond, but a flowing stream',
-      reference: null,
+      reference: 'George MacDonald, "Phantastes"',
     },
     {
       line: 'That fills the sea, and is itself filled by the sky',
@@ -172,7 +172,7 @@ export default {
     },
     {
       line: 'Thirst never more! Be filled',
-      reference: null,
+      reference: 'John 4:13-14',
     },
     {
       line: 'And plunged in the life-giving stream',
@@ -188,7 +188,7 @@ export default {
     },
     {
       line: 'A love that knows neither beginning nor end',
-      reference: null,
+      reference: 'Ephesians 1:4',
     },
   ],
 };
