@@ -20,6 +20,7 @@ import Poem from './Poem';
 
 import { poems, alphabeticallyOrderedPoems, semanticallyOrderedPoems } from './poems';
 import { unseenGloryColors, randomUnseenGloryColor } from './unseenGloryColors';
+import ScrollToTop from './ScrollToTop';
 
 const styles = (theme) => ({
   root: {
@@ -91,7 +92,7 @@ class App extends Component {
     const seenFragmentColor = randomUnseenGloryColor(unFragmentColor);
     const gloryFragmentColor = unseenGloryColors.filter(color => color !== unFragmentColor && color !== seenFragmentColor)[0];
 
-    const activePoemIndex = window.document.location.pathname != '/'
+    const activePoemIndex = window.document.location.pathname !== '/'
       ? semanticallyOrderedPoems.indexOf(window.document.location.pathname.substring(1))
       : null;
 
@@ -218,117 +219,119 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <BrowserRouter>
-          <React.Fragment>
-            <AppBar>
-              <Toolbar>
-                <IconButton onClick={this.toggleDrawer} className={classes.menuButton} color="inherit" aria-label="Menu">
-                  <MenuIcon />
-                </IconButton>
-                <Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer}>
-                  <div
-                    className={classes.drawer}
-                    tabIndex={0}
-                    role="button"
-                    onClick={this.toggleDrawer}
-                    onKeyDown={this.toggleDrawer}
-                  >
-                    {alphabeticalPoemList}
+          <ScrollToTop>
+            <React.Fragment>
+              <AppBar>
+                <Toolbar>
+                  <IconButton onClick={this.toggleDrawer} className={classes.menuButton} color="inherit" aria-label="Menu">
+                    <MenuIcon />
+                  </IconButton>
+                  <Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer}>
+                    <div
+                      className={classes.drawer}
+                      tabIndex={0}
+                      role="button"
+                      onClick={this.toggleDrawer}
+                      onKeyDown={this.toggleDrawer}
+                    >
+                      {alphabeticalPoemList}
+                    </div>
+                  </Drawer>
+                  <div className={classes.appBarTitle}>
+                    <Hidden xsDown>
+                      <Link to={semanticallyOrderedPoems[this.getLeftPoemIndex()]} className={classes.reactRouterLink}>
+                        <IconButton
+                          className={classes.appBarTitleElement}
+                          color="inherit" aria-label="Left"
+                          onMouseEnter={this.onEnterChevronLeft}
+                          onMouseLeave={this.onLeaveChevronLeft}
+                          onClick={this.advancePoemLeft}
+                        >
+                          <ChevronLeft style={{color: this.state.chevronColorLeft}} fontSize="large" alignmentBaseline="middle" />
+                        </IconButton>
+                      </Link>
+                    </Hidden>
+                    <Link to="/" className={classes.reactRouterLink}>
+                      <Typography className={classes.appBarTitleElement} variant="h5" color="inherit" align="center" onClick={this.showHome}>
+                        <span
+                          className={classes.title}
+                          style={{color: this.state.unFragmentColor}}
+                          onMouseEnter={this.onEnterTitleFragment}
+                        >
+                          UN
+                        </span>
+                        <span
+                          className={classes.title}
+                          style={{color: this.state.seenFragmentColor}}
+                          onMouseEnter={this.onEnterTitleFragment}
+                        >
+                          SEEN
+                        </span>
+                        <span className={classes.title}> </span>
+                        <span
+                          className={classes.title}
+                          style={{color: this.state.gloryFragmentColor}}
+                          onMouseEnter={this.onEnterTitleFragment}
+                        >
+                          GLORY
+                        </span>
+                      </Typography>
+                    </Link>
+                    <Hidden xsDown>
+                      <Link to={semanticallyOrderedPoems[this.getRightPoemIndex()]} className={classes.reactRouterLink}>
+                        <IconButton
+                          className={classes.appBarTitleElement}
+                          color="inherit" aria-label="Right"
+                          onMouseEnter={this.onEnterChevronRight}
+                          onMouseLeave={this.onLeaveChevronRight}
+                          onClick={this.advancePoemRight}
+                        >
+                          <ChevronRight style={{color: this.state.chevronColorRight}} fontSize="large" alignmentBaseline="middle" />
+                        </IconButton>
+                      </Link>
+                    </Hidden>
                   </div>
-                </Drawer>
-                <div className={classes.appBarTitle}>
-                  <Hidden xsDown>
-                    <Link to={semanticallyOrderedPoems[this.getLeftPoemIndex()]} className={classes.reactRouterLink}>
-                      <IconButton
-                        className={classes.appBarTitleElement}
-                        color="inherit" aria-label="Left"
-                        onMouseEnter={this.onEnterChevronLeft}
-                        onMouseLeave={this.onLeaveChevronLeft}
-                        onClick={this.advancePoemLeft}
-                      >
-                        <ChevronLeft style={{color: this.state.chevronColorLeft}} fontSize="large" alignmentBaseline="middle" />
-                      </IconButton>
-                    </Link>
-                  </Hidden>
-                  <Link to="/" className={classes.reactRouterLink}>
-                    <Typography className={classes.appBarTitleElement} variant="h5" color="inherit" align="center" onClick={this.showHome}>
-                      <span
-                        className={classes.title}
-                        style={{color: this.state.unFragmentColor}}
-                        onMouseEnter={this.onEnterTitleFragment}
-                      >
-                        UN
-                      </span>
-                      <span
-                        className={classes.title}
-                        style={{color: this.state.seenFragmentColor}}
-                        onMouseEnter={this.onEnterTitleFragment}
-                      >
-                        SEEN
-                      </span>
-                      <span className={classes.title}> </span>
-                      <span
-                        className={classes.title}
-                        style={{color: this.state.gloryFragmentColor}}
-                        onMouseEnter={this.onEnterTitleFragment}
-                      >
-                        GLORY
-                      </span>
-                    </Typography>
-                  </Link>
-                  <Hidden xsDown>
-                    <Link to={semanticallyOrderedPoems[this.getRightPoemIndex()]} className={classes.reactRouterLink}>
-                      <IconButton
-                        className={classes.appBarTitleElement}
-                        color="inherit" aria-label="Right"
-                        onMouseEnter={this.onEnterChevronRight}
-                        onMouseLeave={this.onLeaveChevronRight}
-                        onClick={this.advancePoemRight}
-                      >
-                        <ChevronRight style={{color: this.state.chevronColorRight}} fontSize="large" alignmentBaseline="middle" />
-                      </IconButton>
-                    </Link>
-                  </Hidden>
-                </div>
-                <IconButton
-                  color="inherit"
-                  aria-label="Right"
-                  onMouseEnter={this.onEnterShowReferences}
-                  onMouseLeave={this.onLeaveShowReferences}
-                  onClick={this.onClickShowReferences}
-                >
-                  <BookIcon style={{color: this.state.bookIconColor}} alignmentBaseline="middle" />
-                </IconButton>
-              </Toolbar>
-            </AppBar>
-            <div className={classes.appBar} />
-            <Route exact path="/" component={Home} />
-            <Route path="/:poemKey" render={({ match }) => (
-                <Poem activePoem={poems[match.params.poemKey]} showReferences={this.state.showReferences} />
-            )} />
-            <Hidden smUp>
-              <AppBar className={classes.bottomNavBar}>
-                <div className={classes.bottomNavBarElement}>
-                  <Link to={semanticallyOrderedPoems[this.getLeftPoemIndex()]} className={classes.reactRouterLink}>
-                    <div className={classes.bottomNavBarArrow}>
-                      <IconButton color="inherit" aria-label="Left" onClick={this.advancePoemLeft}>
-                        <ChevronLeft fontSize="large" alignmentBaseline="middle" />
-                      </IconButton>
-                    </div>
-                  </Link>
-                </div>
-                <div className={classes.bottomNavBarElement}>
-                  <Link to={semanticallyOrderedPoems[this.getRightPoemIndex()]} className={classes.reactRouterLink}>
-                    <div className={classes.bottomNavBarArrow}>
-                       <IconButton color="inherit" aria-label="Right" onClick={this.advancePoemRight}>
-                        <ChevronRight fontSize="large" alignmentBaseline="middle" />
-                      </IconButton>
-                    </div>
-                  </Link>
-                </div>
+                  <IconButton
+                    color="inherit"
+                    aria-label="Right"
+                    onMouseEnter={this.onEnterShowReferences}
+                    onMouseLeave={this.onLeaveShowReferences}
+                    onClick={this.onClickShowReferences}
+                  >
+                    <BookIcon style={{color: this.state.bookIconColor}} alignmentBaseline="middle" />
+                  </IconButton>
+                </Toolbar>
               </AppBar>
               <div className={classes.appBar} />
-            </Hidden>
-          </React.Fragment>
+              <Route exact path="/" component={Home} />
+              <Route path="/:poemKey" render={({ match }) => (
+                  <Poem activePoem={poems[match.params.poemKey]} showReferences={this.state.showReferences} />
+              )} />
+              <Hidden smUp>
+                <AppBar className={classes.bottomNavBar}>
+                  <div className={classes.bottomNavBarElement}>
+                    <Link to={semanticallyOrderedPoems[this.getLeftPoemIndex()]} className={classes.reactRouterLink}>
+                      <div className={classes.bottomNavBarArrow}>
+                        <IconButton color="inherit" aria-label="Left" onClick={this.advancePoemLeft}>
+                          <ChevronLeft fontSize="large" alignmentBaseline="middle" />
+                        </IconButton>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className={classes.bottomNavBarElement}>
+                    <Link to={semanticallyOrderedPoems[this.getRightPoemIndex()]} className={classes.reactRouterLink}>
+                      <div className={classes.bottomNavBarArrow}>
+                        <IconButton color="inherit" aria-label="Right" onClick={this.advancePoemRight}>
+                          <ChevronRight fontSize="large" alignmentBaseline="middle" />
+                        </IconButton>
+                      </div>
+                    </Link>
+                  </div>
+                </AppBar>
+                <div className={classes.appBar} />
+              </Hidden>
+            </React.Fragment>
+          </ScrollToTop>
         </BrowserRouter>
       </MuiThemeProvider>
     );
