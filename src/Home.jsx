@@ -11,6 +11,7 @@ const styles = {
   homeContent: {
     margin: '10px 10px',
     textAlign: 'center',
+    userSelect: 'none',
   },
   quote: {
     fontStyle: 'italic',
@@ -50,7 +51,7 @@ class Home extends Component {
         </Typography>
         <Divider />
         <Typography className={classes.homeContent}>
-          Thanks to <a href="https://reactjs.org/">React</a>, <a href="https://github.com/facebook/create-react-app">Create React App</a>, <a href="https://reacttraining.com/react-router/">React Router</a>, <a href="https://fonts.google.com/">Google Fonts</a>, and <a href="https://material-ui.com/">Material-UI</a> for making it easy to make this website. See the code on <a href="https://github.com/sehcheese/UnseenGlory">Github</a>.
+          Thanks to <a href="https://reactjs.org/">React</a>, <a href="https://github.com/facebook/create-react-app">Create React App</a>, <a href="https://reacttraining.com/react-router/">React Router</a>, <a href="https://reactcommunity.org/react-transition-group/">React Transition Group</a>, <a href="https://fonts.google.com/">Google Fonts</a>, and <a href="https://material-ui.com/">Material-UI</a> for making it easy to make this website. See the code on <a href="https://github.com/sehcheese/UnseenGlory">Github</a>.
         </Typography>
       </div>
     );

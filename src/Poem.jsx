@@ -11,12 +11,14 @@ const styles = (theme) => ({
     fontSize: '22px',
     fontStyle: 'italic',
     marginTop: '20px',
+    userSelect: 'none',
   },
   subtitle: {
     textAlign: 'center',
     fontSize: '14px',
     fontStyle: 'italic',
     margin: '12px 0px 5px 5px',
+    userSelect: 'none',
   },
   text: {
     fontSize: '12px',
@@ -25,10 +27,14 @@ const styles = (theme) => ({
     padding: '0 0 10px 0',
     overflowX: 'auto',
     whiteSpace: 'nowrap',
+    userSelect: 'none',
   },
   centeredText: {
     width: 'fit-content',
     margin: '0 auto',
+  },
+  tooltip: {
+    userSelect: 'none',
   },
 });
 
@@ -55,6 +61,7 @@ class Poem extends Component {
           <Tooltip
             title={lineInfo.reference}
             placement="left"
+            classes={{popper: classes.tooltip}}
             disableFocusListener
             enterTouchDelay={100}
             leaveTouchDelay={3000}
