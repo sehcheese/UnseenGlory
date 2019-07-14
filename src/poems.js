@@ -34,7 +34,7 @@ import someMoments from './poems/someMoments';
 import spoken from './poems/spoken';
 import summons from './poems/summons';
 import taken from './poems/taken';
-import theDeathOfHope from './poems/theDeathofHope';
+import theDeathOfHope from './poems/theDeathOfHope';
 import theLastSongOfTheTuckerbird from './poems/theLastSongOfTheTuckerbird';
 import theLightBeforeTheDawn from './poems/theLightBeforeTheDawn';
 import thisChasmOfUnknowing from './poems/thisChasmOfUnknowing';
