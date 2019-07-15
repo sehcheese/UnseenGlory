@@ -13,6 +13,7 @@ import horizon from './poems/horizon';
 import inspired from './poems/inspired';
 import kapooya from './poems/kapooya';
 import listen from './poems/listen';
+import logos from './poems/logos';
 import lordOfTheBalance from './poems/lordOfTheBalance';
 import loveIsNoAbstraction from './poems/loveIsNoAbstraction';
 import meditationOnJohn14_6 from './poems/meditationOnJohn14_6';
@@ -64,6 +65,7 @@ export const poems = {
 	'inspired': inspired,
 	'kapooya': kapooya,
 	'listen': listen,
+	'logos': logos,
 	'lord-of-the-balance': lordOfTheBalance,
 	'love-is-no-abstraction': loveIsNoAbstraction,
 	'meditation-on-john-14-6': meditationOnJohn14_6,
@@ -134,6 +136,7 @@ export const semanticallyOrderedPoems = [
 	'my-visitor',
 	'inspired',
 	'spoken',
+	'logos',
 	'this-chasm-of-unknowing',
 	'the-death-of-hope',
 	'noon',
