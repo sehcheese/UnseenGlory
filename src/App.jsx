@@ -235,13 +235,13 @@ class App extends Component {
     const { classes } = this.props;
 
     const alphabeticalPoemList = alphabeticallyOrderedPoems.map(poemKey => (
-      <ListItem button onClick={() => this.onSelectPoem(poemKey)} key={poemKey}>
-        <Link to={`/${poemKey}`} className={classes.reactRouterLink}>
-          <Typography>
-            <span className={classes.drawerButtonText}>{poems[poemKey].title}</span>
-          </Typography>
-        </Link>
-      </ListItem>
+      <Link to={`/${poemKey}`} className={classes.reactRouterLink} key={poemKey}>
+        <ListItem button onClick={() => this.onSelectPoem(poemKey)}>
+            <Typography>
+              <span className={classes.drawerButtonText}>{poems[poemKey].title}</span>
+            </Typography>
+        </ListItem>
+      </Link>
     ));
 
     return (
