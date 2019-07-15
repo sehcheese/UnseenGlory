@@ -76,7 +76,7 @@ export default {
     },
     {
       line: 'and bear with me this loss',
-      reference: null,
+      reference: 'Psalm 68:19',
     },
     {
       line: '',
