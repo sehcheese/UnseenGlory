@@ -98,25 +98,5 @@ export default {
       line: 'to be watched by You- a pleasant thing',
       reference: 'Psalm 121',
     },
-    {
-      line: '',
-      reference: null,
-    },
-    {
-      line: 'To whom else can I go?',
-      reference: 'John 6:68-69',
-    },
-    {
-      line: 'on You my cares I cast',
-      reference: '1 Peter 5:7',
-    },
-    {
-      line: 'You have had the first word',
-      reference: null,
-    },
-    {
-      line: 'and You shall have the last',
-      reference: null,
-    },
   ],
 };
