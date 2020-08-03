@@ -12,6 +12,7 @@ import hallelujah from './poems/hallelujah';
 import horizon from './poems/horizon';
 import inspired from './poems/inspired';
 import kapooya from './poems/kapooya';
+import letUsGoWhereTheWoundIsDeep from './poems/letUsGoWhereTheWoundIsDeep';
 import listen from './poems/listen';
 import logos from './poems/logos';
 import lordOfTheBalance from './poems/lordOfTheBalance';
@@ -65,6 +66,7 @@ export const poems = {
   horizon: horizon,
   inspired: inspired,
   kapooya: kapooya,
+  'let-us-go-where-the-wound-is-deep': letUsGoWhereTheWoundIsDeep,
   listen: listen,
   logos: logos,
   'lord-of-the-balance': lordOfTheBalance,
@@ -119,6 +121,7 @@ export const semanticallyOrderedPoems = [
   'the-birds-on-the-wire',
   'the-last-song-of-the-tuckerbird',
   'to-every-question',
+  'let-us-go-where-the-wound-is-deep',
   'sanctifying',
   'my-times-are-in-your-hand',
   'my-end',
