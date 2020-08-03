@@ -34,6 +34,7 @@ import seasons from './poems/seasons';
 import shepherd from './poems/shepherd';
 import someMoments from './poems/someMoments';
 import spoken from './poems/spoken';
+import still from './poems/still';
 import summons from './poems/summons';
 import taken from './poems/taken';
 import theBirdsOnTheWire from './poems/theBirdsOnTheWire';
@@ -88,6 +89,7 @@ export const poems = {
   shepherd: shepherd,
   'some-moments': someMoments,
   spoken: spoken,
+  still,
   summons: summons,
   taken: taken,
   'the-birds-on-the-wire': theBirdsOnTheWire,
@@ -116,6 +118,7 @@ export const semanticallyOrderedPoems = [
   'horizon',
   'kapooya',
   'listen',
+  'still',
   'love-is-no-abstraction',
   'shepherd',
   'the-birds-on-the-wire',
