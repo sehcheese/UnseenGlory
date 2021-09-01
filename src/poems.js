@@ -29,6 +29,7 @@ import patience from './poems/patience';
 import peaceMySoul from './poems/peaceMySoul';
 import pegasus from './poems/pegasus';
 import prologue from './poems/prologue';
+import rain from './poems/rain';
 import sanctifying from './poems/sanctifying';
 import seasons from './poems/seasons';
 import shepherd from './poems/shepherd';
@@ -86,6 +87,7 @@ export const poems = {
   prologue,
   sanctifying,
   seasons,
+  rain,
   shepherd,
   'some-moments': someMoments,
   spoken,
