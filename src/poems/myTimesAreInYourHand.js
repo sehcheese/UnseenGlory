@@ -56,7 +56,7 @@ export default {
     },
     {
       line: 'With foes on every side.',
-      reference: 'Psalm 27:3-6'
+      reference: 'Psalm 27:3-6',
     },
     {
       line: '',
@@ -76,7 +76,7 @@ export default {
     },
     {
       line: 'Your Lord will ne’er depart.',
-      reference: 'Deuteronomy 31:8, Matthew 28:20, Joshua 1'
+      reference: 'Deuteronomy 31:8, Matthew 28:20, Joshua 1',
     },
     {
       line: '',
@@ -108,7 +108,7 @@ export default {
     },
     {
       line: 'Is for us home to bring.',
-      reference: 'Heidelberg Catechism Q&A 1, Romans 8:28-30'
+      reference: 'Heidelberg Catechism Q&A 1, Romans 8:28-30',
     },
     {
       line: 'His praise we’ll ever sing,',
