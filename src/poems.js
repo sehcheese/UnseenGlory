@@ -13,6 +13,7 @@ import horizon from './poems/horizon';
 import inspired from './poems/inspired';
 import kapooya from './poems/kapooya';
 import letUsGoWhereTheWoundIsDeep from './poems/letUsGoWhereTheWoundIsDeep';
+import liftUpYourHearts from './poems/liftUpYourHearts';
 import listen from './poems/listen';
 import logos from './poems/logos';
 import lordOfTheBalance from './poems/lordOfTheBalance';
@@ -108,6 +109,7 @@ export const poems = {
   waking,
   'winter-sun': winterSun,
   'you-are-no-fiction': youAreNoFiction,
+  'lift-up-your-hearts': liftUpYourHearts,
 };
 
 export const alphabeticallyOrderedPoems = Object.keys(poems).sort();
@@ -166,4 +168,5 @@ export const semanticallyOrderedPoems = [
   'coram-deo',
   'some-moments',
   'winter-sun',
+  'lift-up-your-hearts',
 ];
