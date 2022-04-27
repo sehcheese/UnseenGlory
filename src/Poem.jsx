@@ -5,7 +5,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 import { unseenGloryColors } from './unseenGloryColors';
 
-const styles = (theme) => ({
+const styles = () => ({
   title: {
     textAlign: 'center',
     fontSize: '22px',
