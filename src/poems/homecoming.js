@@ -1,6 +1,6 @@
 export default {
   title: "Homecoming",
-  subtitle: "Dedicated to uncle Paul and grandma Nederveld",
+  subtitle: "Dedicated to Uncle Paul and Grandma Nederveld",
   lines: [
     {
       line: "O Lord, our God",
