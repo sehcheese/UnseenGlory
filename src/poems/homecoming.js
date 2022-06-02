@@ -27,7 +27,7 @@ export default {
       reference: null,
     },
     {
-      line: "our desparate grieving",
+      line: "our desperate grieving",
       reference: null,
     },
     {
