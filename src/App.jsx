@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 import { MuiThemeProvider, createTheme, withStyles } from '@material-ui/core/styles';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { Button } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -12,6 +13,7 @@ import Drawer from '@material-ui/core/Drawer';
 import ListItem from '@material-ui/core/ListItem';
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
+import CoffeeIcon from '@material-ui/icons/LocalCafe';
 import BookIcon from '@material-ui/icons/Book';
 import Hidden from '@material-ui/core/Hidden';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -344,15 +346,23 @@ class App extends Component {
                     </Link>
                   </Hidden>
                 </div>
-                <IconButton
+                <Button
+                  title="Buy me a coffee"
                   color="inherit"
-                  aria-label="Right"
+                  aria-label="Buy me a coffee"
+                  onClick={() => window.open('https://www.buymeacoffee.com/sehcheese', '_blank')}>
+                  <CoffeeIcon />
+                </Button>
+                <Button
+                  title="Reveal references"
+                  color="inherit"
+                  aria-label="Reveal references"
                   onMouseEnter={this.onEnterShowReferences}
                   onMouseLeave={this.onLeaveShowReferences}
                   onClick={this.onClickShowReferences}
                 >
                   <BookIcon style={{ color: this.state.bookIconColor }} alignmentBaseline="middle" />
-                </IconButton>
+                </Button>
               </Toolbar>
             </AppBar>
             <div className={classes.appBar} />
