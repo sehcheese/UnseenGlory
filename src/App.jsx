@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import { MuiThemeProvider, createTheme, withStyles } from '@material-ui/core/styles';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -254,7 +254,6 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <BrowserRouter>
-          <React.Fragment>
             <AppBar>
               <Toolbar>
                 <IconButton
@@ -366,23 +365,25 @@ class App extends Component {
               </Toolbar>
             </AppBar>
             <div className={classes.appBar} />
-            <Route exact path="/" component={Home} />
-            <Route
-              path="/:poemKey"
-              render={({ location, match }) => (
-                <TransitionGroup>
-                  <CSSTransition
-                    key={location.key}
-                    classNames={this.cssTransitionClassNames}
-                    timeout={transitionDuration}
-                  >
-                    <ScrollToTop>
-                      <Poem activePoem={poems[match.params.poemKey]} showReferences={this.state.showReferences} />
-                    </ScrollToTop>
-                  </CSSTransition>
-                </TransitionGroup>
-              )}
-            />
+            <Routes>
+              <Route exact path="/" component={Home} />
+              <Route
+                path="/:poemKey"
+                render={({ location, match }) => (
+                  <TransitionGroup>
+                    <CSSTransition
+                      key={location.key}
+                      classNames={this.cssTransitionClassNames}
+                      timeout={transitionDuration}
+                    >
+                      <ScrollToTop>
+                        <Poem activePoem={poems[match.params.poemKey]} showReferences={this.state.showReferences} />
+                      </ScrollToTop>
+                    </CSSTransition>
+                  </TransitionGroup>
+                )}
+              />
+            </Routes>
             <Hidden smUp>
               <AppBar className={classes.bottomNavBar}>
                 <div className={classes.bottomNavBarElement}>
@@ -406,7 +407,6 @@ class App extends Component {
               </AppBar>
               <div className={classes.appBar} />
             </Hidden>
-          </React.Fragment>
         </BrowserRouter>
       </MuiThemeProvider>
     );
