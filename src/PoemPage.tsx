@@ -1,51 +1,16 @@
 import React from "react";
-import { withStyles } from "@mui/material/styles";
-import { Typography, Tooltip } from "@mui/material";
+import { Typography, Tooltip, Box } from "@mui/material";
 
 import { unseenGloryColors } from "./unseenGloryColors";
 import { Poem } from "./types";
 
-const styles = () => ({
-  title: {
-    textAlign: "center",
-    fontSize: "22px",
-    fontStyle: "italic",
-    marginTop: "20px",
-    userSelect: "none",
-  },
-  subtitle: {
-    textAlign: "center",
-    fontSize: "14px",
-    fontStyle: "italic",
-    margin: "12px 0px 5px 5px",
-    userSelect: "none",
-  },
-  text: {
-    fontSize: "12px",
-    fontStyle: "regular",
-    margin: "20px 5px",
-    padding: "0 0 10px 0",
-    overflowX: "auto",
-    whiteSpace: "nowrap",
-    userSelect: "none",
-  },
-  centeredText: {
-    width: "fit-content",
-    margin: "0 auto",
-  },
-  tooltip: {
-    userSelect: "none",
-  },
-});
-
 interface Props {
   readonly activePoem: Poem;
-  readonly classes: any;
   readonly showReferences: boolean;
 }
 
-function PoemPage(props: Props) {
-  const { activePoem, classes, showReferences } = props;
+export function PoemPage(props: Props) {
+  const { activePoem, showReferences } = props;
 
   let referenceIndex = 0;
   const lines = activePoem.lines.map((lineInfo, index) => {
@@ -72,7 +37,7 @@ function PoemPage(props: Props) {
         <Tooltip
           title={lineInfo.reference}
           placement="left"
-          classes={{ popper: classes.tooltip }}
+          PopperProps={{ sx: { userSelect: "none" } }}
           disableFocusListener
           enterTouchDelay={100}
           leaveTouchDelay={3000}
@@ -97,21 +62,54 @@ function PoemPage(props: Props) {
   let subtitle;
   if (activePoem.subtitle !== null) {
     subtitle = (
-      <Typography className={classes.subtitle}>
+      <Typography
+        sx={{
+          textAlign: "center",
+          fontSize: "14px",
+          fontStyle: "italic",
+          margin: "12px 0px 5px 5px",
+          userSelect: "none",
+        }}
+      >
         {activePoem.subtitle}
       </Typography>
     );
   }
 
   return (
-    <div>
-      <Typography className={classes.title}>{activePoem.title}</Typography>
+    <>
+      <Typography
+        sx={{
+          textAlign: "center",
+          fontSize: "22px",
+          fontStyle: "italic",
+          marginTop: "20px",
+          userSelect: "none",
+        }}
+      >
+        {activePoem.title}
+      </Typography>
       {subtitle}
-      <div className={classes.text}>
-        <Typography className={classes.centeredText}>{lines}</Typography>
-      </div>
-    </div>
+      <Box
+        sx={{
+          fontSize: "12px",
+          fontStyle: "regular",
+          margin: "20px 5px",
+          padding: "0 0 10px 0",
+          overflowX: "auto",
+          whiteSpace: "nowrap",
+          userSelect: "none",
+        }}
+      >
+        <Typography
+          sx={{
+            width: "fit-content",
+            margin: "0 auto",
+          }}
+        >
+          {lines}
+        </Typography>
+      </Box>
+    </>
   );
 }
-
-export default withStyles(styles)(PoemPage);
