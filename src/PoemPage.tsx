@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Tooltip from "@material-ui/core/Tooltip";
 
 import { unseenGloryColors } from "./unseenGloryColors";
+import { Poem } from "./types";
 
 const styles = () => ({
   title: {
@@ -38,7 +39,13 @@ const styles = () => ({
   },
 });
 
-function Poem(props) {
+interface Props {
+  readonly activePoem: Poem;
+  readonly classes: any;
+  readonly showReferences: boolean;
+}
+
+function PoemPage(props: Props) {
   const { activePoem, classes, showReferences } = props;
 
   let referenceIndex = 0;
@@ -108,4 +115,4 @@ function Poem(props) {
   );
 }
 
-export default withStyles(styles)(Poem);
+export default withStyles(styles)(PoemPage);

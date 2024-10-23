@@ -1,4 +1,4 @@
-import Poem from "../Poem";
+import Poem from "../PoemPage";
 
 export const winterSun: Poem = {
   title: "Winter Sun",
@@ -6,199 +6,199 @@ export const winterSun: Poem = {
   lines: [
     {
       line: "The shadows, long",
-      reference: null
+      reference: null,
     },
     {
       line: "inside my soul",
-      reference: null
+      reference: null,
     },
     {
       line: "dark guilt, despair",
-      reference: null
+      reference: null,
     },
     {
       line: "this shattered whole",
-      reference: null
+      reference: null,
     },
     {
       line: "",
-      reference: null
+      reference: null,
     },
     {
       line: "This hollow heart",
-      reference: null
+      reference: null,
     },
     {
       line: "I dare not sound",
-      reference: null
+      reference: null,
     },
     {
       line: "for fear of what",
-      reference: null
+      reference: null,
     },
     {
       line: "may thus be found",
-      reference: null
+      reference: null,
     },
     {
       line: "",
-      reference: null
+      reference: null,
     },
     {
       line: "I hide my deeds",
-      reference: null
+      reference: null,
     },
     {
       line: "I'm not hidden",
-      reference: null
+      reference: null,
     },
     {
       line: "winter sun gives",
-      reference: null
+      reference: null,
     },
     {
       line: "light unbidden",
-      reference: null
+      reference: null,
     },
     {
       line: "",
-      reference: null
+      reference: null,
     },
     {
       line: "Exposing what",
-      reference: null
+      reference: null,
     },
     {
       line: "my heart does fill",
-      reference: null
+      reference: null,
     },
     {
       line: "a sinner once",
-      reference: null
+      reference: null,
     },
     {
       line: "a sinner still",
-      reference: null
+      reference: null,
     },
     {
       line: "",
-      reference: null
+      reference: null,
     },
     {
       line: "Then deep a voice",
-      reference: null
+      reference: null,
     },
     {
       line: "resounding strong:",
-      reference: null
+      reference: null,
     },
     {
       line: "look not upon",
-      reference: "Robert Murray M'Cheyne"
+      reference: "Robert Murray M'Cheyne",
     },
     {
       line: "yourself too long",
-      reference: "Robert Murray M'Cheyne"
+      reference: "Robert Murray M'Cheyne",
     },
     {
       line: "",
-      reference: null
+      reference: null,
     },
     {
       line: "But gaze at Him",
-      reference: "Robert Murray M'Cheyne"
+      reference: "Robert Murray M'Cheyne",
     },
     {
       line: "who knew no sin",
-      reference: null
+      reference: null,
     },
     {
       line: "humble yourself",
-      reference: "1 Peter 5:6"
+      reference: "1 Peter 5:6",
     },
     {
       line: "and enter in",
-      reference: null
+      reference: null,
     },
     {
       line: "",
-      reference: null
+      reference: null,
     },
     {
       line: "The prodigal",
-      reference: "Luke 15:11-32"
+      reference: "Luke 15:11-32",
     },
     {
       line: "is now a son",
-      reference: "Luke 15:11-32"
+      reference: "Luke 15:11-32",
     },
     {
       line: "the battle is",
-      reference: null
+      reference: null,
     },
     {
       line: "already won",
-      reference: null
+      reference: null,
     },
     {
       line: "",
-      reference: null
+      reference: null,
     },
     {
       line: "Speak not of sin",
-      reference: null
+      reference: null,
     },
     {
       line: "without His name",
-      reference: null
+      reference: null,
     },
     {
       line: "shun not His grace",
-      reference: "Galatians 2:21"
+      reference: "Galatians 2:21",
     },
     {
       line: "your essence claim",
-      reference: null
+      reference: null,
     },
     {
       line: "",
-      reference: null
+      reference: null,
     },
     {
       line: "Rejoice in Him",
-      reference: null
+      reference: null,
     },
     {
       line: "Who knows you well",
-      reference: null
+      reference: null,
     },
     {
       line: "when shadows cast",
-      reference: null
+      reference: null,
     },
     {
       line: "His mercy tell",
-      reference: null
+      reference: null,
     },
     {
       line: "",
-      reference: null
+      reference: null,
     },
     {
       line: "In Christ, the Son",
-      reference: "Romans 8:1"
+      reference: "Romans 8:1",
     },
     {
       line: "we fearless stand",
-      reference: "Romans 8:1"
+      reference: "Romans 8:1",
     },
     {
       line: "the night, far gone",
-      reference: "Romans 13:12, Niel Nielson"
+      reference: "Romans 13:12, Niel Nielson",
     },
     {
       line: "the day, at hand",
-      reference: "Romans 13:12, Niel Nielson"
-    }
-  ]
+      reference: "Romans 13:12, Niel Nielson",
+    },
+  ],
 };

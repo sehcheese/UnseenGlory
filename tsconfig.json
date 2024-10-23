@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
+    "jsx": "react-jsx",
     "module": "system",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,

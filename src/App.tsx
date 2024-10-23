@@ -1,29 +1,37 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
-import { MuiThemeProvider, createTheme, withStyles } from '@material-ui/core/styles';
-import blueGrey from '@material-ui/core/colors/blueGrey';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { Button } from '@material-ui/core';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Drawer from '@material-ui/core/Drawer';
-import ListItem from '@material-ui/core/ListItem';
-import ChevronLeft from '@material-ui/icons/ChevronLeft';
-import ChevronRight from '@material-ui/icons/ChevronRight';
-import CoffeeIcon from '@material-ui/icons/LocalCafe';
-import BookIcon from '@material-ui/icons/Book';
-import Hidden from '@material-ui/core/Hidden';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import React, { Component } from "react";
+import { BrowserRouter, Link, Route } from "react-router-dom";
+import {
+  MuiThemeProvider,
+  createTheme,
+  withStyles,
+} from "@material-ui/core/styles";
+import blueGrey from "@material-ui/core/colors/blueGrey";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { Button } from "@material-ui/core";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
+import Drawer from "@material-ui/core/Drawer";
+import ListItem from "@material-ui/core/ListItem";
+import ChevronLeft from "@material-ui/icons/ChevronLeft";
+import ChevronRight from "@material-ui/icons/ChevronRight";
+import CoffeeIcon from "@material-ui/icons/LocalCafe";
+import BookIcon from "@material-ui/icons/Book";
+import Hidden from "@material-ui/core/Hidden";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import Home from './Home';
-import Poem from './Poem';
+import Home from "./Home";
+import Poem from "./PoemPage";
 
-import { poems, alphabeticallyOrderedPoems, semanticallyOrderedPoems } from './poems';
-import { unseenGloryColors, randomUnseenGloryColor } from './unseenGloryColors';
-import ScrollToTop from './ScrollToTop';
+import {
+  poems,
+  alphabeticallyOrderedPoems,
+  semanticallyOrderedPoems,
+} from "./poems";
+import { unseenGloryColors, randomUnseenGloryColor } from "./unseenGloryColors";
+import ScrollToTop from "./ScrollToTop";
 
 const transitionDuration = 800;
 
@@ -33,42 +41,42 @@ const styles = (theme) => ({
   },
   appBar: theme.mixins.toolbar,
   appBarTitle: {
-    width: '100%',
-    textAlign: 'center',
+    width: "100%",
+    textAlign: "center",
   },
   appBarTitleElement: {
-    display: 'inline',
-    verticalAlign: 'middle',
-    cursor: 'pointer',
+    display: "inline",
+    verticalAlign: "middle",
+    cursor: "pointer",
   },
   menuButton: {
     marginLeft: -12,
   },
   title: {
-    verticalAlign: 'middle',
+    verticalAlign: "middle",
   },
   drawer: {
-    backgroundColor: 'black',
+    backgroundColor: "black",
   },
   drawerButtonText: {
-    color: 'white',
+    color: "white",
   },
   bottomNavBar: {
-    top: 'auto',
+    top: "auto",
     bottom: 0,
-    display: 'flex',
-    flexDirection: 'row',
-    width: '100%',
+    display: "flex",
+    flexDirection: "row",
+    width: "100%",
   },
   bottomNavBarElement: {
     flexGrow: 1,
-    textAlign: 'center',
+    textAlign: "center",
   },
   bottomNavBarArrow: {
-    color: 'white',
+    color: "white",
   },
   reactRouterLink: {
-    textDecoration: 'none',
+    textDecoration: "none",
   },
   fadeEnter: {
     opacity: 0,
@@ -95,7 +103,7 @@ const styles = (theme) => ({
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#000',
+      main: "#000",
     },
     secondary: blueGrey,
   },
@@ -105,7 +113,7 @@ const theme = createTheme({
   },
 });
 
-const white = '#FFF';
+const white = "#FFF";
 
 class App extends Component {
   constructor(props) {
@@ -118,8 +126,10 @@ class App extends Component {
     )[0];
 
     const activePoemIndex =
-      window.document.location.pathname !== '/'
-        ? semanticallyOrderedPoems.indexOf(window.document.location.pathname.substring(1))
+      window.document.location.pathname !== "/"
+        ? semanticallyOrderedPoems.indexOf(
+            window.document.location.pathname.substring(1),
+          )
         : null;
 
     this.state = {
@@ -158,30 +168,45 @@ class App extends Component {
   };
 
   getLeftPoemIndex = () => {
-    const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : 0;
-    const leftPoemIndex = activePoemIndex === 0 ? semanticallyOrderedPoems.length - 1 : activePoemIndex - 1;
+    const activePoemIndex =
+      this.state.activePoemIndex !== null ? this.state.activePoemIndex : 0;
+    const leftPoemIndex =
+      activePoemIndex === 0
+        ? semanticallyOrderedPoems.length - 1
+        : activePoemIndex - 1;
     return leftPoemIndex;
   };
 
   advancePoemLeft = () => {
     const newFragmentColors = this.newFragmentColors();
-    this.setState(() => ({ activePoemIndex: this.getLeftPoemIndex(), ...newFragmentColors }));
+    this.setState(() => ({
+      activePoemIndex: this.getLeftPoemIndex(),
+      ...newFragmentColors,
+    }));
   };
 
   advancePoemRight = () => {
     const rightPoemIndex = this.getRightPoemIndex();
     const newFragmentColors = this.newFragmentColors();
-    this.setState(() => ({ activePoemIndex: rightPoemIndex, ...newFragmentColors, elementIn: true }));
+    this.setState(() => ({
+      activePoemIndex: rightPoemIndex,
+      ...newFragmentColors,
+      elementIn: true,
+    }));
   };
 
   getRightPoemIndex = () => {
-    const activePoemIndex = this.state.activePoemIndex !== null ? this.state.activePoemIndex : -1;
-    const rightPoemIndex = (activePoemIndex + 1) % semanticallyOrderedPoems.length;
+    const activePoemIndex =
+      this.state.activePoemIndex !== null ? this.state.activePoemIndex : -1;
+    const rightPoemIndex =
+      (activePoemIndex + 1) % semanticallyOrderedPoems.length;
     return rightPoemIndex;
   };
 
   onEnterChevronLeft = () => {
-    this.setState(() => ({ chevronColorLeft: randomUnseenGloryColor(this.state.chevronColorLeft) }));
+    this.setState(() => ({
+      chevronColorLeft: randomUnseenGloryColor(this.state.chevronColorLeft),
+    }));
   };
 
   onLeaveChevronLeft = () => {
@@ -189,7 +214,9 @@ class App extends Component {
   };
 
   onEnterChevronRight = () => {
-    this.setState(() => ({ chevronColorRight: randomUnseenGloryColor(this.state.chevronColorRight) }));
+    this.setState(() => ({
+      chevronColorRight: randomUnseenGloryColor(this.state.chevronColorRight),
+    }));
   };
 
   onLeaveChevronRight = () => {
@@ -220,7 +247,9 @@ class App extends Component {
   };
 
   onEnterShowReferences = () => {
-    this.setState(() => ({ bookIconColor: randomUnseenGloryColor(this.state.bookIconColor) }));
+    this.setState(() => ({
+      bookIconColor: randomUnseenGloryColor(this.state.bookIconColor),
+    }));
   };
 
   onLeaveShowReferences = () => {
@@ -230,7 +259,9 @@ class App extends Component {
   };
 
   onClickShowReferences = () => {
-    const bookIconColor = !this.state.showReferences ? randomUnseenGloryColor(this.state.bookIconColor) : white;
+    const bookIconColor = !this.state.showReferences
+      ? randomUnseenGloryColor(this.state.bookIconColor)
+      : white;
     this.setState(() => ({
       showReferences: !this.state.showReferences,
       bookIconColor,
@@ -241,10 +272,16 @@ class App extends Component {
     const { classes } = this.props;
 
     const alphabeticalPoemList = alphabeticallyOrderedPoems.map((poemKey) => (
-      <Link to={`/${poemKey}`} className={classes.reactRouterLink} key={poemKey}>
+      <Link
+        to={`/${poemKey}`}
+        className={classes.reactRouterLink}
+        key={poemKey}
+      >
         <ListItem button onClick={() => this.onSelectPoem(poemKey)}>
           <Typography>
-            <span className={classes.drawerButtonText}>{poems[poemKey].title}</span>
+            <span className={classes.drawerButtonText}>
+              {poems[poemKey].title}
+            </span>
           </Typography>
         </ListItem>
       </Link>
@@ -265,7 +302,10 @@ class App extends Component {
                 >
                   <MenuIcon />
                 </IconButton>
-                <Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer}>
+                <Drawer
+                  open={this.state.drawerOpen}
+                  onClose={this.toggleDrawer}
+                >
                   <div
                     className={classes.drawer}
                     tabIndex={0}
@@ -278,7 +318,10 @@ class App extends Component {
                 </Drawer>
                 <div className={classes.appBarTitle}>
                   <Hidden xsDown>
-                    <Link to={semanticallyOrderedPoems[this.getLeftPoemIndex()]} className={classes.reactRouterLink}>
+                    <Link
+                      to={semanticallyOrderedPoems[this.getLeftPoemIndex()]}
+                      className={classes.reactRouterLink}
+                    >
                       <IconButton
                         className={classes.appBarTitleElement}
                         color="inherit"
@@ -328,7 +371,10 @@ class App extends Component {
                     </Typography>
                   </Link>
                   <Hidden xsDown>
-                    <Link to={semanticallyOrderedPoems[this.getRightPoemIndex()]} className={classes.reactRouterLink}>
+                    <Link
+                      to={semanticallyOrderedPoems[this.getRightPoemIndex()]}
+                      className={classes.reactRouterLink}
+                    >
                       <IconButton
                         className={classes.appBarTitleElement}
                         color="inherit"
@@ -350,7 +396,13 @@ class App extends Component {
                   title="Buy me a coffee"
                   color="inherit"
                   aria-label="Buy me a coffee"
-                  onClick={() => window.open('https://www.buymeacoffee.com/sehcheese', '_blank')}>
+                  onClick={() =>
+                    window.open(
+                      "https://www.buymeacoffee.com/sehcheese",
+                      "_blank",
+                    )
+                  }
+                >
                   <CoffeeIcon />
                 </Button>
                 <Button
@@ -361,7 +413,10 @@ class App extends Component {
                   onMouseLeave={this.onLeaveShowReferences}
                   onClick={this.onClickShowReferences}
                 >
-                  <BookIcon style={{ color: this.state.bookIconColor }} alignmentBaseline="middle" />
+                  <BookIcon
+                    style={{ color: this.state.bookIconColor }}
+                    alignmentBaseline="middle"
+                  />
                 </Button>
               </Toolbar>
             </AppBar>
@@ -377,7 +432,10 @@ class App extends Component {
                     timeout={transitionDuration}
                   >
                     <ScrollToTop>
-                      <Poem activePoem={poems[match.params.poemKey]} showReferences={this.state.showReferences} />
+                      <Poem
+                        activePoem={poems[match.params.poemKey]}
+                        showReferences={this.state.showReferences}
+                      />
                     </ScrollToTop>
                   </CSSTransition>
                 </TransitionGroup>
@@ -386,19 +444,39 @@ class App extends Component {
             <Hidden smUp>
               <AppBar className={classes.bottomNavBar}>
                 <div className={classes.bottomNavBarElement}>
-                  <Link to={semanticallyOrderedPoems[this.getLeftPoemIndex()]} className={classes.reactRouterLink}>
+                  <Link
+                    to={semanticallyOrderedPoems[this.getLeftPoemIndex()]}
+                    className={classes.reactRouterLink}
+                  >
                     <div className={classes.bottomNavBarArrow}>
-                      <IconButton color="inherit" aria-label="Left" onClick={this.advancePoemLeft}>
-                        <ChevronLeft fontSize="large" alignmentBaseline="middle" />
+                      <IconButton
+                        color="inherit"
+                        aria-label="Left"
+                        onClick={this.advancePoemLeft}
+                      >
+                        <ChevronLeft
+                          fontSize="large"
+                          alignmentBaseline="middle"
+                        />
                       </IconButton>
                     </div>
                   </Link>
                 </div>
                 <div className={classes.bottomNavBarElement}>
-                  <Link to={semanticallyOrderedPoems[this.getRightPoemIndex()]} className={classes.reactRouterLink}>
+                  <Link
+                    to={semanticallyOrderedPoems[this.getRightPoemIndex()]}
+                    className={classes.reactRouterLink}
+                  >
                     <div className={classes.bottomNavBarArrow}>
-                      <IconButton color="inherit" aria-label="Right" onClick={this.advancePoemRight}>
-                        <ChevronRight fontSize="large" alignmentBaseline="middle" />
+                      <IconButton
+                        color="inherit"
+                        aria-label="Right"
+                        onClick={this.advancePoemRight}
+                      >
+                        <ChevronRight
+                          fontSize="large"
+                          alignmentBaseline="middle"
+                        />
                       </IconButton>
                     </div>
                   </Link>
