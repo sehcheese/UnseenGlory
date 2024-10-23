@@ -1,4 +1,4 @@
-import aPrayer from "./poems/aPrayer";
+import { aPrayer } from "./poems/aPrayer";
 import azaleaBlooming from "./poems/azaleaBlooming";
 import callAndResponse from "./poems/callAndResponse";
 import cirrus from "./poems/cirrus";
