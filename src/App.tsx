@@ -4,22 +4,22 @@ import {
   MuiThemeProvider,
   createTheme,
   withStyles,
-} from "@material-ui/core/styles";
-import blueGrey from "@material-ui/core/colors/blueGrey";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { Button } from "@material-ui/core";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Drawer from "@material-ui/core/Drawer";
-import ListItem from "@material-ui/core/ListItem";
-import ChevronLeft from "@material-ui/icons/ChevronLeft";
-import ChevronRight from "@material-ui/icons/ChevronRight";
-import CoffeeIcon from "@material-ui/icons/LocalCafe";
-import BookIcon from "@material-ui/icons/Book";
-import Hidden from "@material-ui/core/Hidden";
+} from "@mui/material/styles";
+import blueGrey from "@mui/material/colors/blueGrey";
+import CssBaseline from "@mui/material/CssBaseline";
+import { Button } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Drawer from "@mui/material/Drawer";
+import ListItem from "@mui/material/ListItem";
+import ChevronLeft from "@mui/icons-material/ChevronLeft";
+import ChevronRight from "@mui/icons-material/ChevronRight";
+import CoffeeIcon from "@mui/icons-material/LocalCafe";
+import BookIcon from "@mui/icons-material/Book";
+import Hidden from "@mui/material/Hidden";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Home from "./Home";

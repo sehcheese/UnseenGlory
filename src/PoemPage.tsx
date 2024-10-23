@@ -1,7 +1,6 @@
 import React from "react";
-import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import Tooltip from "@material-ui/core/Tooltip";
+import { withStyles } from "@mui/material/styles";
+import { Typography, Tooltip } from "@mui/material";
 
 import { unseenGloryColors } from "./unseenGloryColors";
 import { Poem } from "./types";
