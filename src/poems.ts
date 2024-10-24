@@ -112,11 +112,13 @@ export const poems = {
   "winter-sun": winterSun,
   "you-are-no-fiction": youAreNoFiction,
   "lift-up-your-hearts": liftUpYourHearts,
-};
+} as const;
 
-export const alphabeticallyOrderedPoems = Object.keys(poems).sort();
+export const alphabeticallyOrderedPoems = Object.keys(
+  poems,
+).sort() as readonly (keyof typeof poems)[];
 
-export const semanticallyOrderedPoems = [
+export const semanticallyOrderedPoems: readonly (keyof typeof poems)[] = [
   "prologue",
   "mockingbird",
   "the-light-before-the-dawn",

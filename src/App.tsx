@@ -9,7 +9,9 @@ import {
   IconButton,
   MenuIcon,
   Drawer,
-  ListItem,
+  withStyles,
+  ListItemButton,
+  Box,
 } from "@mui/material";
 import ChevronLeft from "@mui/icons-material/ChevronLeft";
 import ChevronRight from "@mui/icons-material/ChevronRight";
@@ -31,11 +33,10 @@ import ScrollToTop from "./ScrollToTop";
 
 const transitionDuration = 800;
 
-const styles = (theme) => ({
+const classes = {
   root: {
     flexGrow: 1,
   },
-  appBar: theme.mixins.toolbar,
   appBarTitle: {
     width: "100%",
     textAlign: "center",
@@ -94,30 +95,29 @@ const styles = (theme) => ({
   fadeExitDone: {
     opacity: 0,
   },
-});
+};
 
 const white = "#FFF";
 
-function App() {
-  const unFragmentColorInitial = randomUnseenGloryColor();
-  const seenFragmentColorInitial = randomUnseenGloryColor(
-    unFragmentColorInitial,
-  );
-  const gloryFragmentColorInitial = unseenGloryColors.filter(
-    (color) =>
-      color !== unFragmentColorInitial && color !== seenFragmentColorInitial,
+interface TitleColors {
+  readonly un: string;
+  readonly seen: string;
+  readonly glory: string;
+}
+
+export function App() {
+  const unInitialColor = randomUnseenGloryColor();
+  const seenInitialColor = randomUnseenGloryColor(unInitialColor);
+  const gloryInitialColor = unseenGloryColors.filter(
+    (color) => color !== unInitialColor && color !== seenInitialColor,
   )[0];
   const [chevronColorLeft, setChevronColorLeft] = useState(white);
   const [chevronColorRight, setChevronColorRight] = useState(white);
-  const [unFragmentColor, setUnFragmentColor] = useState(
-    unFragmentColorInitial,
-  );
-  const [seenFragmentColor, setSeenFragmentColor] = useState(
-    seenFragmentColorInitial,
-  );
-  const [gloryFragmentColor, setGloryFragmentColor] = useState(
-    gloryFragmentColorInitial,
-  );
+  const [titleColors, setTitleColors] = useState<TitleColors>({
+    un: unInitialColor,
+    seen: seenInitialColor,
+    glory: gloryInitialColor,
+  });
   const [bookIconColor, setBookIconColor] = useState(white);
   const [activePoemIndex, setActivePoemIndex] = useState<number | null>(
     window.document.location.pathname !== "/"
@@ -134,165 +134,134 @@ function App() {
     setDrawerOpen((oldValue) => !oldValue);
   }
 
-  function newFragmentColors() {
-    const newUnFragmentColor = randomUnseenGloryColor(unFragmentColor);
+  function updateTitleColors() {
+    const newUnFragmentColor = randomUnseenGloryColor(titleColors.un);
     const newSeenFragmentColor = randomUnseenGloryColor(newUnFragmentColor);
     const newGloryFragmentColor = unseenGloryColors.filter(
       (color) => color !== newUnFragmentColor && color !== newSeenFragmentColor,
     )[0];
 
-    return {
-      unFragmentColor: newUnFragmentColor,
-      seenFragmentColor: newSeenFragmentColor,
-      gloryFragmentColor: newGloryFragmentColor,
-    };
+    setTitleColors({
+      un: newUnFragmentColor,
+      seen: newSeenFragmentColor,
+      glory: newGloryFragmentColor,
+    });
   }
 
-  function onSelectPoem(poemKey: string) {
+  function onSelectPoem(poemKey: keyof typeof poems) {
     const semanticallyOrderedPoemsIndex =
       semanticallyOrderedPoems.indexOf(poemKey);
+    onSelectPoemByIndex(semanticallyOrderedPoemsIndex);
+  }
+
+  function onSelectPoemByIndex(semanticallyOrderedPoemsIndex: number) {
     if (semanticallyOrderedPoemsIndex !== -1) {
-      const updatedFragmentColors = newFragmentColors();
+      updateTitleColors();
       setActivePoemIndex(semanticallyOrderedPoemsIndex);
-      setUnFragmentColor(updatedFragmentColors.unFragmentColor);
-      setSeenFragmentColor(updatedFragmentColors.seenFragmentColor);
-      setGloryFragmentColor(updatedFragmentColors.gloryFragmentColor);
     }
   }
 
-  getLeftPoemIndex = () => {
-    const activePoemIndex =
-      this.state.activePoemIndex !== null ? this.state.activePoemIndex : 0;
-    const leftPoemIndex =
-      activePoemIndex === 0
-        ? semanticallyOrderedPoems.length - 1
-        : activePoemIndex - 1;
-    return leftPoemIndex;
-  };
+  function getLeftPoemIndex() {
+    return activePoemIndex === null && activePoemIndex === 0
+      ? semanticallyOrderedPoems.length - 1
+      : activePoemIndex - 1;
+  }
 
-  advancePoemLeft = () => {
-    const newFragmentColors = this.newFragmentColors();
-    this.setState(() => ({
-      activePoemIndex: this.getLeftPoemIndex(),
-      ...newFragmentColors,
-    }));
-  };
+  function advancePoemLeft() {
+    const leftPoemIndex = getLeftPoemIndex();
+    setActivePoemIndex(leftPoemIndex);
+    onSelectPoemByIndex(leftPoemIndex);
+  }
 
-  advancePoemRight = () => {
-    const rightPoemIndex = this.getRightPoemIndex();
-    const newFragmentColors = this.newFragmentColors();
-    this.setState(() => ({
-      activePoemIndex: rightPoemIndex,
-      ...newFragmentColors,
-      elementIn: true,
-    }));
-  };
+  function getRightPoemIndex() {
+    return ((activePoemIndex ?? -1) + 1) % semanticallyOrderedPoems.length;
+  }
 
-  getRightPoemIndex = () => {
-    const activePoemIndex =
-      this.state.activePoemIndex !== null ? this.state.activePoemIndex : -1;
-    const rightPoemIndex =
-      (activePoemIndex + 1) % semanticallyOrderedPoems.length;
-    return rightPoemIndex;
-  };
+  function advancePoemRight() {
+    const rightPoemIndex = getRightPoemIndex();
+    setActivePoemIndex(rightPoemIndex);
+    onSelectPoemByIndex(rightPoemIndex);
+  }
 
-  onEnterChevronLeft = () => {
-    this.setState(() => ({
-      chevronColorLeft: randomUnseenGloryColor(this.state.chevronColorLeft),
-    }));
-  };
+  function onEnterChevronLeft() {
+    setChevronColorLeft(randomUnseenGloryColor(chevronColorLeft));
+  }
 
-  onLeaveChevronLeft = () => {
-    this.setState(() => ({ chevronColorLeft: white }));
-  };
+  function onLeaveChevronLeft() {
+    setChevronColorLeft(white);
+  }
 
-  onEnterChevronRight = () => {
-    this.setState(() => ({
-      chevronColorRight: randomUnseenGloryColor(this.state.chevronColorRight),
-    }));
-  };
+  function onEnterChevronRight() {
+    setChevronColorRight(randomUnseenGloryColor(chevronColorRight));
+  }
 
-  onLeaveChevronRight = () => {
-    this.setState(() => ({ chevronColorRight: white }));
-  };
+  function onLeaveChevronRight() {
+    setChevronColorRight(white);
+  }
 
-  onEnterTitleFragment = () => {
-    const newFragmentColors = this.newFragmentColors();
-    this.setState(() => ({ ...newFragmentColors }));
-  };
+  function onEnterTitleFragment() {
+    updateTitleColors();
+  }
 
-  showHome = () => {
-    this.setState(() => ({ activePoemIndex: null }));
-  };
+  function showHome() {
+    setActivePoemIndex(null);
+  }
 
-  onEnterShowReferences = () => {
-    this.setState(() => ({
-      bookIconColor: randomUnseenGloryColor(this.state.bookIconColor),
-    }));
-  };
+  function onEnterShowReferences() {
+    setBookIconColor(randomUnseenGloryColor(bookIconColor));
+  }
 
-  onLeaveShowReferences = () => {
-    if (!this.state.showReferences) {
-      this.setState(() => ({ bookIconColor: white }));
+  function onLeaveShowReferences() {
+    if (!showReferences) {
+      setBookIconColor(white);
     }
-  };
+  }
 
-  onClickShowReferences = () => {
-    const bookIconColor = !this.state.showReferences
-      ? randomUnseenGloryColor(this.state.bookIconColor)
-      : white;
-    this.setState(() => ({
-      showReferences: !this.state.showReferences,
-      bookIconColor,
-    }));
-  };
+  function toggleShowReferences() {
+    setShowReferences((oldShowReferencesValue) => !oldShowReferencesValue);
+  }
 
   const alphabeticalPoemList = alphabeticallyOrderedPoems.map((poemKey) => (
-    <Link to={`/${poemKey}`} className={classes.reactRouterLink} key={poemKey}>
-      <ListItem button onClick={() => this.onSelectPoem(poemKey)}>
+    <Link to={`/${poemKey}`} key={poemKey}>
+      <ListItemButton onClick={() => onSelectPoem(poemKey)}>
         <Typography>
-          <span className={classes.drawerButtonText}>
-            {poems[poemKey].title}
-          </span>
+          <span style={classes.drawerButtonText}>{poems[poemKey].title}</span>
         </Typography>
-      </ListItem>
+      </ListItemButton>
     </Link>
   ));
 
   return (
-    <MuiThemeProvider theme={theme}>
+    <>
       <CssBaseline />
       <BrowserRouter>
-        <React.Fragment>
+        <>
           <AppBar>
             <Toolbar>
               <IconButton
                 onClick={this.toggleDrawer}
-                className={classes.menuButton}
+                sx={classes.menuButton}
                 color="inherit"
                 aria-label="Menu"
               >
                 <MenuIcon />
               </IconButton>
               <Drawer open={this.state.drawerOpen} onClose={this.toggleDrawer}>
-                <div
-                  className={classes.drawer}
+                <Box
+                  sx={classes.drawer}
                   tabIndex={0}
                   role="button"
                   onClick={this.toggleDrawer}
                   onKeyDown={this.toggleDrawer}
                 >
                   {alphabeticalPoemList}
-                </div>
+                </Box>
               </Drawer>
-              <div className={classes.appBarTitle}>
+              <Box sx={classes.appBarTitle}>
                 <Hidden xsDown>
-                  <Link
-                    to={semanticallyOrderedPoems[this.getLeftPoemIndex()]}
-                    className={classes.reactRouterLink}
-                  >
+                  <Link to={semanticallyOrderedPoems[this.getLeftPoemIndex()]}>
                     <IconButton
-                      className={classes.appBarTitleElement}
+                      sx={classes.appBarTitleElement}
                       color="inherit"
                       aria-label="Left"
                       onMouseEnter={this.onEnterChevronLeft}
@@ -307,32 +276,38 @@ function App() {
                     </IconButton>
                   </Link>
                 </Hidden>
-                <Link to="/" className={classes.reactRouterLink}>
+                <Link to="/">
                   <Typography
-                    className={classes.appBarTitleElement}
+                    sx={classes.appBarTitleElement}
                     variant="h5"
                     color="inherit"
                     align="center"
                     onClick={this.showHome}
                   >
                     <span
-                      className={classes.title}
-                      style={{ color: this.state.unFragmentColor }}
+                      style={{
+                        ...classes.title,
+                        color: this.state.unFragmentColor,
+                      }}
                       onMouseEnter={this.onEnterTitleFragment}
                     >
                       UN
                     </span>
                     <span
-                      className={classes.title}
-                      style={{ color: this.state.seenFragmentColor }}
+                      style={{
+                        ...classes.title,
+                        color: this.state.seenFragmentColor,
+                      }}
                       onMouseEnter={this.onEnterTitleFragment}
                     >
                       SEEN
                     </span>
-                    <span className={classes.title}> </span>
+                    <span style={classes.title}> </span>
                     <span
-                      className={classes.title}
-                      style={{ color: this.state.gloryFragmentColor }}
+                      style={{
+                        ...classes.title,
+                        color: this.state.gloryFragmentColor,
+                      }}
                       onMouseEnter={this.onEnterTitleFragment}
                     >
                       GLORY
@@ -340,12 +315,9 @@ function App() {
                   </Typography>
                 </Link>
                 <Hidden xsDown>
-                  <Link
-                    to={semanticallyOrderedPoems[this.getRightPoemIndex()]}
-                    className={classes.reactRouterLink}
-                  >
+                  <Link to={semanticallyOrderedPoems[this.getRightPoemIndex()]}>
                     <IconButton
-                      className={classes.appBarTitleElement}
+                      sx={classes.appBarTitleElement}
                       color="inherit"
                       aria-label="Right"
                       onMouseEnter={this.onEnterChevronRight}
@@ -360,7 +332,7 @@ function App() {
                     </IconButton>
                   </Link>
                 </Hidden>
-              </div>
+              </Box>
               <Button
                 title="Buy me a coffee"
                 color="inherit"
@@ -380,7 +352,7 @@ function App() {
                 aria-label="Reveal references"
                 onMouseEnter={this.onEnterShowReferences}
                 onMouseLeave={this.onLeaveShowReferences}
-                onClick={this.onClickShowReferences}
+                onClick={this.toggleShowReferences}
               >
                 <BookIcon
                   style={{ color: this.state.bookIconColor }}
@@ -389,7 +361,7 @@ function App() {
               </Button>
             </Toolbar>
           </AppBar>
-          <div className={classes.appBar} />
+          <Box />
           <Route exact path="/" component={Home} />
           <Route
             path="/:poemKey"
@@ -411,13 +383,13 @@ function App() {
             )}
           />
           <Hidden smUp>
-            <AppBar className={classes.bottomNavBar}>
-              <div className={classes.bottomNavBarElement}>
+            <AppBar sx={classes.bottomNavBar}>
+              <Box sx={classes.bottomNavBarElement}>
                 <Link
                   to={semanticallyOrderedPoems[this.getLeftPoemIndex()]}
-                  className={classes.reactRouterLink}
+                  sx={classes.reactRouterLink}
                 >
-                  <div className={classes.bottomNavBarArrow}>
+                  <Box sx={classes.bottomNavBarArrow}>
                     <IconButton
                       color="inherit"
                       aria-label="Left"
@@ -428,15 +400,12 @@ function App() {
                         alignmentBaseline="middle"
                       />
                     </IconButton>
-                  </div>
+                  </Box>
                 </Link>
-              </div>
-              <div className={classes.bottomNavBarElement}>
-                <Link
-                  to={semanticallyOrderedPoems[this.getRightPoemIndex()]}
-                  className={classes.reactRouterLink}
-                >
-                  <div className={classes.bottomNavBarArrow}>
+              </Box>
+              <Box sx={classes.bottomNavBarElement}>
+                <Link to={semanticallyOrderedPoems[this.getRightPoemIndex()]}>
+                  <Box sx={classes.bottomNavBarArrow}>
                     <IconButton
                       color="inherit"
                       aria-label="Right"
@@ -447,16 +416,13 @@ function App() {
                         alignmentBaseline="middle"
                       />
                     </IconButton>
-                  </div>
+                  </Box>
                 </Link>
-              </div>
+              </Box>
             </AppBar>
-            <div className={classes.appBar} />
           </Hidden>
-        </React.Fragment>
+        </>
       </BrowserRouter>
-    </MuiThemeProvider>
+    </>
   );
 }
-
-export default withStyles(styles)(App);
