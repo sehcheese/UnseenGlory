@@ -7,9 +7,7 @@ import {
   AppBar,
   Toolbar,
   IconButton,
-  MenuIcon,
   Drawer,
-  withStyles,
   ListItemButton,
   Box,
 } from "@mui/material";
@@ -17,7 +15,7 @@ import ChevronLeft from "@mui/icons-material/ChevronLeft";
 import ChevronRight from "@mui/icons-material/ChevronRight";
 import CoffeeIcon from "@mui/icons-material/LocalCafe";
 import BookIcon from "@mui/icons-material/Book";
-import Hidden from "@mui/material/Hidden";
+import MenuIcon from "@mui/icons-material/Menu";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import { Home } from "./Home";
@@ -119,13 +117,13 @@ export function App() {
     glory: gloryInitialColor,
   });
   const [bookIconColor, setBookIconColor] = useState(white);
-  const [activePoemIndex, setActivePoemIndex] = useState<number | null>(
-    window.document.location.pathname !== "/"
-      ? semanticallyOrderedPoems.indexOf(
-          window.document.location.pathname.substring(1),
-        )
-      : null,
-  );
+  const [activePoemIndex, setActivePoemIndex] = useState<number | null>(() => {
+    const poemSlug = window.document.location.pathname.substring(1);
+    if (semanticallyOrderedPoems.includes(poemSlug as any)) {
+      return semanticallyOrderedPoems.indexOf(poemSlug as any);
+    }
+    return null;
+  });
   const [showReferences, setShowReferences] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [elementIn, setElementIn] = useState(true);
@@ -258,7 +256,7 @@ export function App() {
                 </Box>
               </Drawer>
               <Box sx={classes.appBarTitle}>
-                <Hidden xsDown>
+                <Box sx={{ display: { xs: "none", sm: "block" } }}>
                   <Link to={semanticallyOrderedPoems[this.getLeftPoemIndex()]}>
                     <IconButton
                       sx={classes.appBarTitleElement}
@@ -275,7 +273,7 @@ export function App() {
                       />
                     </IconButton>
                   </Link>
-                </Hidden>
+                </Box>
                 <Link to="/">
                   <Typography
                     sx={classes.appBarTitleElement}
@@ -314,7 +312,7 @@ export function App() {
                     </span>
                   </Typography>
                 </Link>
-                <Hidden xsDown>
+                <Box sx={{ display: { xs: "none" } }}>
                   <Link to={semanticallyOrderedPoems[this.getRightPoemIndex()]}>
                     <IconButton
                       sx={classes.appBarTitleElement}
@@ -331,7 +329,7 @@ export function App() {
                       />
                     </IconButton>
                   </Link>
-                </Hidden>
+                </Box>
               </Box>
               <Button
                 title="Buy me a coffee"
@@ -382,13 +380,10 @@ export function App() {
               </TransitionGroup>
             )}
           />
-          <Hidden smUp>
+          <Box sx={{ display: { xs: "block", sm: "none" } }}>
             <AppBar sx={classes.bottomNavBar}>
               <Box sx={classes.bottomNavBarElement}>
-                <Link
-                  to={semanticallyOrderedPoems[this.getLeftPoemIndex()]}
-                  sx={classes.reactRouterLink}
-                >
+                <Link to={semanticallyOrderedPoems[this.getLeftPoemIndex()]}>
                   <Box sx={classes.bottomNavBarArrow}>
                     <IconButton
                       color="inherit"
@@ -420,7 +415,7 @@ export function App() {
                 </Link>
               </Box>
             </AppBar>
-          </Hidden>
+          </Box>
         </>
       </BrowserRouter>
     </>
